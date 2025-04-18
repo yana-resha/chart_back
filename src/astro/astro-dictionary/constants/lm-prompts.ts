@@ -1,0 +1,1 @@
+export const PLANET_IN_SIGN_SYSTEM_PROMPT = ``

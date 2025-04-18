@@ -1,0 +1,19 @@
+version: '3.0'
+
+services:
+  main: 
+    container_name: main
+    build:
+      context: .
+    env_file:
+     - .devepment.env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 4000:4000
+      - 9229:9229
+    command: npm run start:dev
+    depends_on:
+      - pg
+    restart: always

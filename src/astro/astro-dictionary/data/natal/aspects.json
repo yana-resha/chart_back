@@ -1,0 +1,1022 @@
+{
+  "Conjunction": {
+    "Sun": {
+      "Moon": "Заглушка для Sun Conjunction Moon",
+      "Mercury": "Заглушка для Sun Conjunction Mercury",
+      "Venus": "Заглушка для Sun Conjunction Venus",
+      "Mars": "Заглушка для Sun Conjunction Mars",
+      "Jupiter": "Заглушка для Sun Conjunction Jupiter",
+      "Saturn": "Заглушка для Sun Conjunction Saturn",
+      "Uranus": "Заглушка для Sun Conjunction Uranus",
+      "Neptune": "Заглушка для Sun Conjunction Neptune",
+      "Pluto": "Заглушка для Sun Conjunction Pluto",
+      "Proserpina": "Заглушка для Sun Conjunction Proserpina",
+      "Chiron": "Заглушка для Sun Conjunction Chiron",
+      "Lilith": "Заглушка для Sun Conjunction Lilith",
+      "Rahu": "Заглушка для Sun Conjunction Rahu",
+      "Ketu": "Заглушка для Sun Conjunction Ketu",
+      "Fortuna": "Заглушка для Sun Conjunction Fortuna",
+      "Selena": "Заглушка для Sun Conjunction Selena"
+    },
+    "Moon": {
+      "Mercury": "Заглушка для Moon Conjunction Mercury",
+      "Venus": "Заглушка для Moon Conjunction Venus",
+      "Mars": "Заглушка для Moon Conjunction Mars",
+      "Jupiter": "Заглушка для Moon Conjunction Jupiter",
+      "Saturn": "Заглушка для Moon Conjunction Saturn",
+      "Uranus": "Заглушка для Moon Conjunction Uranus",
+      "Neptune": "Заглушка для Moon Conjunction Neptune",
+      "Pluto": "Заглушка для Moon Conjunction Pluto",
+      "Proserpina": "Заглушка для Moon Conjunction Proserpina",
+      "Chiron": "Заглушка для Moon Conjunction Chiron",
+      "Lilith": "Заглушка для Moon Conjunction Lilith",
+      "Rahu": "Заглушка для Moon Conjunction Rahu",
+      "Ketu": "Заглушка для Moon Conjunction Ketu",
+      "Fortuna": "Заглушка для Moon Conjunction Fortuna",
+      "Selena": "Заглушка для Moon Conjunction Selena"
+    },
+    "Mercury": {
+      "Venus": "Заглушка для Mercury Conjunction Venus",
+      "Mars": "Заглушка для Mercury Conjunction Mars",
+      "Jupiter": "Заглушка для Mercury Conjunction Jupiter",
+      "Saturn": "Заглушка для Mercury Conjunction Saturn",
+      "Uranus": "Заглушка для Mercury Conjunction Uranus",
+      "Neptune": "Заглушка для Mercury Conjunction Neptune",
+      "Pluto": "Заглушка для Mercury Conjunction Pluto",
+      "Proserpina": "Заглушка для Mercury Conjunction Proserpina",
+      "Chiron": "Заглушка для Mercury Conjunction Chiron",
+      "Lilith": "Заглушка для Mercury Conjunction Lilith",
+      "Rahu": "Заглушка для Mercury Conjunction Rahu",
+      "Ketu": "Заглушка для Mercury Conjunction Ketu",
+      "Fortuna": "Заглушка для Mercury Conjunction Fortuna",
+      "Selena": "Заглушка для Mercury Conjunction Selena"
+    },
+    "Venus": {
+      "Mars": "Заглушка для Venus Conjunction Mars",
+      "Jupiter": "Заглушка для Venus Conjunction Jupiter",
+      "Saturn": "Заглушка для Venus Conjunction Saturn",
+      "Uranus": "Заглушка для Venus Conjunction Uranus",
+      "Neptune": "Заглушка для Venus Conjunction Neptune",
+      "Pluto": "Заглушка для Venus Conjunction Pluto",
+      "Proserpina": "Заглушка для Venus Conjunction Proserpina",
+      "Chiron": "Заглушка для Venus Conjunction Chiron",
+      "Lilith": "Заглушка для Venus Conjunction Lilith",
+      "Rahu": "Заглушка для Venus Conjunction Rahu",
+      "Ketu": "Заглушка для Venus Conjunction Ketu",
+      "Fortuna": "Заглушка для Venus Conjunction Fortuna",
+      "Selena": "Заглушка для Venus Conjunction Selena"
+    },
+    "Mars": {
+      "Jupiter": "Заглушка для Mars Conjunction Jupiter",
+      "Saturn": "Заглушка для Mars Conjunction Saturn",
+      "Uranus": "Заглушка для Mars Conjunction Uranus",
+      "Neptune": "Заглушка для Mars Conjunction Neptune",
+      "Pluto": "Заглушка для Mars Conjunction Pluto",
+      "Proserpina": "Заглушка для Mars Conjunction Proserpina",
+      "Chiron": "Заглушка для Mars Conjunction Chiron",
+      "Lilith": "Заглушка для Mars Conjunction Lilith",
+      "Rahu": "Заглушка для Mars Conjunction Rahu",
+      "Ketu": "Заглушка для Mars Conjunction Ketu",
+      "Fortuna": "Заглушка для Mars Conjunction Fortuna",
+      "Selena": "Заглушка для Mars Conjunction Selena"
+    },
+    "Jupiter": {
+      "Saturn": "Заглушка для Jupiter Conjunction Saturn",
+      "Uranus": "Заглушка для Jupiter Conjunction Uranus",
+      "Neptune": "Заглушка для Jupiter Conjunction Neptune",
+      "Pluto": "Заглушка для Jupiter Conjunction Pluto",
+      "Proserpina": "Заглушка для Jupiter Conjunction Proserpina",
+      "Chiron": "Заглушка для Jupiter Conjunction Chiron",
+      "Lilith": "Заглушка для Jupiter Conjunction Lilith",
+      "Rahu": "Заглушка для Jupiter Conjunction Rahu",
+      "Ketu": "Заглушка для Jupiter Conjunction Ketu",
+      "Fortuna": "Заглушка для Jupiter Conjunction Fortuna",
+      "Selena": "Заглушка для Jupiter Conjunction Selena"
+    },
+    "Saturn": {
+      "Uranus": "Заглушка для Saturn Conjunction Uranus",
+      "Neptune": "Заглушка для Saturn Conjunction Neptune",
+      "Pluto": "Заглушка для Saturn Conjunction Pluto",
+      "Proserpina": "Заглушка для Saturn Conjunction Proserpina",
+      "Chiron": "Заглушка для Saturn Conjunction Chiron",
+      "Lilith": "Заглушка для Saturn Conjunction Lilith",
+      "Rahu": "Заглушка для Saturn Conjunction Rahu",
+      "Ketu": "Заглушка для Saturn Conjunction Ketu",
+      "Fortuna": "Заглушка для Saturn Conjunction Fortuna",
+      "Selena": "Заглушка для Saturn Conjunction Selena"
+    },
+    "Uranus": {
+      "Neptune": "Заглушка для Uranus Conjunction Neptune",
+      "Pluto": "Заглушка для Uranus Conjunction Pluto",
+      "Proserpina": "Заглушка для Uranus Conjunction Proserpina",
+      "Chiron": "Заглушка для Uranus Conjunction Chiron",
+      "Lilith": "Заглушка для Uranus Conjunction Lilith",
+      "Rahu": "Заглушка для Uranus Conjunction Rahu",
+      "Ketu": "Заглушка для Uranus Conjunction Ketu",
+      "Fortuna": "Заглушка для Uranus Conjunction Fortuna",
+      "Selena": "Заглушка для Uranus Conjunction Selena"
+    },
+    "Neptune": {
+      "Pluto": "Заглушка для Neptune Conjunction Pluto",
+      "Proserpina": "Заглушка для Neptune Conjunction Proserpina",
+      "Chiron": "Заглушка для Neptune Conjunction Chiron",
+      "Lilith": "Заглушка для Neptune Conjunction Lilith",
+      "Rahu": "Заглушка для Neptune Conjunction Rahu",
+      "Ketu": "Заглушка для Neptune Conjunction Ketu",
+      "Fortuna": "Заглушка для Neptune Conjunction Fortuna",
+      "Selena": "Заглушка для Neptune Conjunction Selena"
+    },
+    "Pluto": {
+      "Proserpina": "Заглушка для Pluto Conjunction Proserpina",
+      "Chiron": "Заглушка для Pluto Conjunction Chiron",
+      "Lilith": "Заглушка для Pluto Conjunction Lilith",
+      "Rahu": "Заглушка для Pluto Conjunction Rahu",
+      "Ketu": "Заглушка для Pluto Conjunction Ketu",
+      "Fortuna": "Заглушка для Pluto Conjunction Fortuna",
+      "Selena": "Заглушка для Pluto Conjunction Selena"
+    },
+    "Proserpina": {
+      "Chiron": "Заглушка для Proserpina Conjunction Chiron",
+      "Lilith": "Заглушка для Proserpina Conjunction Lilith",
+      "Rahu": "Заглушка для Proserpina Conjunction Rahu",
+      "Ketu": "Заглушка для Proserpina Conjunction Ketu",
+      "Fortuna": "Заглушка для Proserpina Conjunction Fortuna",
+      "Selena": "Заглушка для Proserpina Conjunction Selena"
+    },
+    "Chiron": {
+      "Lilith": "Заглушка для Chiron Conjunction Lilith",
+      "Rahu": "Заглушка для Chiron Conjunction Rahu",
+      "Ketu": "Заглушка для Chiron Conjunction Ketu",
+      "Fortuna": "Заглушка для Chiron Conjunction Fortuna",
+      "Selena": "Заглушка для Chiron Conjunction Selena"
+    },
+    "Lilith": {
+      "Rahu": "Заглушка для Lilith Conjunction Rahu",
+      "Ketu": "Заглушка для Lilith Conjunction Ketu",
+      "Fortuna": "Заглушка для Lilith Conjunction Fortuna",
+      "Selena": "Заглушка для Lilith Conjunction Selena"
+    },
+    "Rahu": {
+      "Ketu": "Заглушка для Rahu Conjunction Ketu",
+      "Fortuna": "Заглушка для Rahu Conjunction Fortuna",
+      "Selena": "Заглушка для Rahu Conjunction Selena"
+    },
+    "Ketu": {
+      "Fortuna": "Заглушка для Ketu Conjunction Fortuna",
+      "Selena": "Заглушка для Ketu Conjunction Selena"
+    },
+    "Fortuna": {
+      "Selena": "Заглушка для Fortuna Conjunction Selena"
+    }
+  },
+  "Opposition": {
+    "Sun": {
+      "Moon": "Заглушка для Sun Opposition Moon",
+      "Mercury": "Заглушка для Sun Opposition Mercury",
+      "Venus": "Заглушка для Sun Opposition Venus",
+      "Mars": "Заглушка для Sun Opposition Mars",
+      "Jupiter": "Заглушка для Sun Opposition Jupiter",
+      "Saturn": "Заглушка для Sun Opposition Saturn",
+      "Uranus": "Заглушка для Sun Opposition Uranus",
+      "Neptune": "Заглушка для Sun Opposition Neptune",
+      "Pluto": "Заглушка для Sun Opposition Pluto",
+      "Proserpina": "Заглушка для Sun Opposition Proserpina",
+      "Chiron": "Заглушка для Sun Opposition Chiron",
+      "Lilith": "Заглушка для Sun Opposition Lilith",
+      "Rahu": "Заглушка для Sun Opposition Rahu",
+      "Ketu": "Заглушка для Sun Opposition Ketu",
+      "Fortuna": "Заглушка для Sun Opposition Fortuna",
+      "Selena": "Заглушка для Sun Opposition Selena"
+    },
+    "Moon": {
+      "Mercury": "Заглушка для Moon Opposition Mercury",
+      "Venus": "Заглушка для Moon Opposition Venus",
+      "Mars": "Заглушка для Moon Opposition Mars",
+      "Jupiter": "Заглушка для Moon Opposition Jupiter",
+      "Saturn": "Заглушка для Moon Opposition Saturn",
+      "Uranus": "Заглушка для Moon Opposition Uranus",
+      "Neptune": "Заглушка для Moon Opposition Neptune",
+      "Pluto": "Заглушка для Moon Opposition Pluto",
+      "Proserpina": "Заглушка для Moon Opposition Proserpina",
+      "Chiron": "Заглушка для Moon Opposition Chiron",
+      "Lilith": "Заглушка для Moon Opposition Lilith",
+      "Rahu": "Заглушка для Moon Opposition Rahu",
+      "Ketu": "Заглушка для Moon Opposition Ketu",
+      "Fortuna": "Заглушка для Moon Opposition Fortuna",
+      "Selena": "Заглушка для Moon Opposition Selena"
+    },
+    "Mercury": {
+      "Venus": "Заглушка для Mercury Opposition Venus",
+      "Mars": "Заглушка для Mercury Opposition Mars",
+      "Jupiter": "Заглушка для Mercury Opposition Jupiter",
+      "Saturn": "Заглушка для Mercury Opposition Saturn",
+      "Uranus": "Заглушка для Mercury Opposition Uranus",
+      "Neptune": "Заглушка для Mercury Opposition Neptune",
+      "Pluto": "Заглушка для Mercury Opposition Pluto",
+      "Proserpina": "Заглушка для Mercury Opposition Proserpina",
+      "Chiron": "Заглушка для Mercury Opposition Chiron",
+      "Lilith": "Заглушка для Mercury Opposition Lilith",
+      "Rahu": "Заглушка для Mercury Opposition Rahu",
+      "Ketu": "Заглушка для Mercury Opposition Ketu",
+      "Fortuna": "Заглушка для Mercury Opposition Fortuna",
+      "Selena": "Заглушка для Mercury Opposition Selena"
+    },
+    "Venus": {
+      "Mars": "Заглушка для Venus Opposition Mars",
+      "Jupiter": "Заглушка для Venus Opposition Jupiter",
+      "Saturn": "Заглушка для Venus Opposition Saturn",
+      "Uranus": "Заглушка для Venus Opposition Uranus",
+      "Neptune": "Заглушка для Venus Opposition Neptune",
+      "Pluto": "Заглушка для Venus Opposition Pluto",
+      "Proserpina": "Заглушка для Venus Opposition Proserpina",
+      "Chiron": "Заглушка для Venus Opposition Chiron",
+      "Lilith": "Заглушка для Venus Opposition Lilith",
+      "Rahu": "Заглушка для Venus Opposition Rahu",
+      "Ketu": "Заглушка для Venus Opposition Ketu",
+      "Fortuna": "Заглушка для Venus Opposition Fortuna",
+      "Selena": "Заглушка для Venus Opposition Selena"
+    },
+    "Mars": {
+      "Jupiter": "Заглушка для Mars Opposition Jupiter",
+      "Saturn": "Заглушка для Mars Opposition Saturn",
+      "Uranus": "Заглушка для Mars Opposition Uranus",
+      "Neptune": "Заглушка для Mars Opposition Neptune",
+      "Pluto": "Заглушка для Mars Opposition Pluto",
+      "Proserpina": "Заглушка для Mars Opposition Proserpina",
+      "Chiron": "Заглушка для Mars Opposition Chiron",
+      "Lilith": "Заглушка для Mars Opposition Lilith",
+      "Rahu": "Заглушка для Mars Opposition Rahu",
+      "Ketu": "Заглушка для Mars Opposition Ketu",
+      "Fortuna": "Заглушка для Mars Opposition Fortuna",
+      "Selena": "Заглушка для Mars Opposition Selena"
+    },
+    "Jupiter": {
+      "Saturn": "Заглушка для Jupiter Opposition Saturn",
+      "Uranus": "Заглушка для Jupiter Opposition Uranus",
+      "Neptune": "Заглушка для Jupiter Opposition Neptune",
+      "Pluto": "Заглушка для Jupiter Opposition Pluto",
+      "Proserpina": "Заглушка для Jupiter Opposition Proserpina",
+      "Chiron": "Заглушка для Jupiter Opposition Chiron",
+      "Lilith": "Заглушка для Jupiter Opposition Lilith",
+      "Rahu": "Заглушка для Jupiter Opposition Rahu",
+      "Ketu": "Заглушка для Jupiter Opposition Ketu",
+      "Fortuna": "Заглушка для Jupiter Opposition Fortuna",
+      "Selena": "Заглушка для Jupiter Opposition Selena"
+    },
+    "Saturn": {
+      "Uranus": "Заглушка для Saturn Opposition Uranus",
+      "Neptune": "Заглушка для Saturn Opposition Neptune",
+      "Pluto": "Заглушка для Saturn Opposition Pluto",
+      "Proserpina": "Заглушка для Saturn Opposition Proserpina",
+      "Chiron": "Заглушка для Saturn Opposition Chiron",
+      "Lilith": "Заглушка для Saturn Opposition Lilith",
+      "Rahu": "Заглушка для Saturn Opposition Rahu",
+      "Ketu": "Заглушка для Saturn Opposition Ketu",
+      "Fortuna": "Заглушка для Saturn Opposition Fortuna",
+      "Selena": "Заглушка для Saturn Opposition Selena"
+    },
+    "Uranus": {
+      "Neptune": "Заглушка для Uranus Opposition Neptune",
+      "Pluto": "Заглушка для Uranus Opposition Pluto",
+      "Proserpina": "Заглушка для Uranus Opposition Proserpina",
+      "Chiron": "Заглушка для Uranus Opposition Chiron",
+      "Lilith": "Заглушка для Uranus Opposition Lilith",
+      "Rahu": "Заглушка для Uranus Opposition Rahu",
+      "Ketu": "Заглушка для Uranus Opposition Ketu",
+      "Fortuna": "Заглушка для Uranus Opposition Fortuna",
+      "Selena": "Заглушка для Uranus Opposition Selena"
+    },
+    "Neptune": {
+      "Pluto": "Заглушка для Neptune Opposition Pluto",
+      "Proserpina": "Заглушка для Neptune Opposition Proserpina",
+      "Chiron": "Заглушка для Neptune Opposition Chiron",
+      "Lilith": "Заглушка для Neptune Opposition Lilith",
+      "Rahu": "Заглушка для Neptune Opposition Rahu",
+      "Ketu": "Заглушка для Neptune Opposition Ketu",
+      "Fortuna": "Заглушка для Neptune Opposition Fortuna",
+      "Selena": "Заглушка для Neptune Opposition Selena"
+    },
+    "Pluto": {
+      "Proserpina": "Заглушка для Pluto Opposition Proserpina",
+      "Chiron": "Заглушка для Pluto Opposition Chiron",
+      "Lilith": "Заглушка для Pluto Opposition Lilith",
+      "Rahu": "Заглушка для Pluto Opposition Rahu",
+      "Ketu": "Заглушка для Pluto Opposition Ketu",
+      "Fortuna": "Заглушка для Pluto Opposition Fortuna",
+      "Selena": "Заглушка для Pluto Opposition Selena"
+    },
+    "Proserpina": {
+      "Chiron": "Заглушка для Proserpina Opposition Chiron",
+      "Lilith": "Заглушка для Proserpina Opposition Lilith",
+      "Rahu": "Заглушка для Proserpina Opposition Rahu",
+      "Ketu": "Заглушка для Proserpina Opposition Ketu",
+      "Fortuna": "Заглушка для Proserpina Opposition Fortuna",
+      "Selena": "Заглушка для Proserpina Opposition Selena"
+    },
+    "Chiron": {
+      "Lilith": "Заглушка для Chiron Opposition Lilith",
+      "Rahu": "Заглушка для Chiron Opposition Rahu",
+      "Ketu": "Заглушка для Chiron Opposition Ketu",
+      "Fortuna": "Заглушка для Chiron Opposition Fortuna",
+      "Selena": "Заглушка для Chiron Opposition Selena"
+    },
+    "Lilith": {
+      "Rahu": "Заглушка для Lilith Opposition Rahu",
+      "Ketu": "Заглушка для Lilith Opposition Ketu",
+      "Fortuna": "Заглушка для Lilith Opposition Fortuna",
+      "Selena": "Заглушка для Lilith Opposition Selena"
+    },
+    "Rahu": {
+      "Ketu": "Заглушка для Rahu Opposition Ketu",
+      "Fortuna": "Заглушка для Rahu Opposition Fortuna",
+      "Selena": "Заглушка для Rahu Opposition Selena"
+    },
+    "Ketu": {
+      "Fortuna": "Заглушка для Ketu Opposition Fortuna",
+      "Selena": "Заглушка для Ketu Opposition Selena"
+    },
+    "Fortuna": {
+      "Selena": "Заглушка для Fortuna Opposition Selena"
+    }
+  },
+  "Trine": {
+    "Sun": {
+      "Moon": "Заглушка для Sun Trine Moon",
+      "Mercury": "Заглушка для Sun Trine Mercury",
+      "Venus": "Заглушка для Sun Trine Venus",
+      "Mars": "Заглушка для Sun Trine Mars",
+      "Jupiter": "Заглушка для Sun Trine Jupiter",
+      "Saturn": "Заглушка для Sun Trine Saturn",
+      "Uranus": "Заглушка для Sun Trine Uranus",
+      "Neptune": "Заглушка для Sun Trine Neptune",
+      "Pluto": "Заглушка для Sun Trine Pluto",
+      "Proserpina": "Заглушка для Sun Trine Proserpina",
+      "Chiron": "Заглушка для Sun Trine Chiron",
+      "Lilith": "Заглушка для Sun Trine Lilith",
+      "Rahu": "Заглушка для Sun Trine Rahu",
+      "Ketu": "Заглушка для Sun Trine Ketu",
+      "Fortuna": "Заглушка для Sun Trine Fortuna",
+      "Selena": "Заглушка для Sun Trine Selena"
+    },
+    "Moon": {
+      "Mercury": "Заглушка для Moon Trine Mercury",
+      "Venus": "Заглушка для Moon Trine Venus",
+      "Mars": "Заглушка для Moon Trine Mars",
+      "Jupiter": "Заглушка для Moon Trine Jupiter",
+      "Saturn": "Заглушка для Moon Trine Saturn",
+      "Uranus": "Заглушка для Moon Trine Uranus",
+      "Neptune": "Заглушка для Moon Trine Neptune",
+      "Pluto": "Заглушка для Moon Trine Pluto",
+      "Proserpina": "Заглушка для Moon Trine Proserpina",
+      "Chiron": "Заглушка для Moon Trine Chiron",
+      "Lilith": "Заглушка для Moon Trine Lilith",
+      "Rahu": "Заглушка для Moon Trine Rahu",
+      "Ketu": "Заглушка для Moon Trine Ketu",
+      "Fortuna": "Заглушка для Moon Trine Fortuna",
+      "Selena": "Заглушка для Moon Trine Selena"
+    },
+    "Mercury": {
+      "Venus": "Заглушка для Mercury Trine Venus",
+      "Mars": "Заглушка для Mercury Trine Mars",
+      "Jupiter": "Заглушка для Mercury Trine Jupiter",
+      "Saturn": "Заглушка для Mercury Trine Saturn",
+      "Uranus": "Заглушка для Mercury Trine Uranus",
+      "Neptune": "Заглушка для Mercury Trine Neptune",
+      "Pluto": "Заглушка для Mercury Trine Pluto",
+      "Proserpina": "Заглушка для Mercury Trine Proserpina",
+      "Chiron": "Заглушка для Mercury Trine Chiron",
+      "Lilith": "Заглушка для Mercury Trine Lilith",
+      "Rahu": "Заглушка для Mercury Trine Rahu",
+      "Ketu": "Заглушка для Mercury Trine Ketu",
+      "Fortuna": "Заглушка для Mercury Trine Fortuna",
+      "Selena": "Заглушка для Mercury Trine Selena"
+    },
+    "Venus": {
+      "Mars": "Заглушка для Venus Trine Mars",
+      "Jupiter": "Заглушка для Venus Trine Jupiter",
+      "Saturn": "Заглушка для Venus Trine Saturn",
+      "Uranus": "Заглушка для Venus Trine Uranus",
+      "Neptune": "Заглушка для Venus Trine Neptune",
+      "Pluto": "Заглушка для Venus Trine Pluto",
+      "Proserpina": "Заглушка для Venus Trine Proserpina",
+      "Chiron": "Заглушка для Venus Trine Chiron",
+      "Lilith": "Заглушка для Venus Trine Lilith",
+      "Rahu": "Заглушка для Venus Trine Rahu",
+      "Ketu": "Заглушка для Venus Trine Ketu",
+      "Fortuna": "Заглушка для Venus Trine Fortuna",
+      "Selena": "Заглушка для Venus Trine Selena"
+    },
+    "Mars": {
+      "Jupiter": "Заглушка для Mars Trine Jupiter",
+      "Saturn": "Заглушка для Mars Trine Saturn",
+      "Uranus": "Заглушка для Mars Trine Uranus",
+      "Neptune": "Заглушка для Mars Trine Neptune",
+      "Pluto": "Заглушка для Mars Trine Pluto",
+      "Proserpina": "Заглушка для Mars Trine Proserpina",
+      "Chiron": "Заглушка для Mars Trine Chiron",
+      "Lilith": "Заглушка для Mars Trine Lilith",
+      "Rahu": "Заглушка для Mars Trine Rahu",
+      "Ketu": "Заглушка для Mars Trine Ketu",
+      "Fortuna": "Заглушка для Mars Trine Fortuna",
+      "Selena": "Заглушка для Mars Trine Selena"
+    },
+    "Jupiter": {
+      "Saturn": "Заглушка для Jupiter Trine Saturn",
+      "Uranus": "Заглушка для Jupiter Trine Uranus",
+      "Neptune": "Заглушка для Jupiter Trine Neptune",
+      "Pluto": "Заглушка для Jupiter Trine Pluto",
+      "Proserpina": "Заглушка для Jupiter Trine Proserpina",
+      "Chiron": "Заглушка для Jupiter Trine Chiron",
+      "Lilith": "Заглушка для Jupiter Trine Lilith",
+      "Rahu": "Заглушка для Jupiter Trine Rahu",
+      "Ketu": "Заглушка для Jupiter Trine Ketu",
+      "Fortuna": "Заглушка для Jupiter Trine Fortuna",
+      "Selena": "Заглушка для Jupiter Trine Selena"
+    },
+    "Saturn": {
+      "Uranus": "Заглушка для Saturn Trine Uranus",
+      "Neptune": "Заглушка для Saturn Trine Neptune",
+      "Pluto": "Заглушка для Saturn Trine Pluto",
+      "Proserpina": "Заглушка для Saturn Trine Proserpina",
+      "Chiron": "Заглушка для Saturn Trine Chiron",
+      "Lilith": "Заглушка для Saturn Trine Lilith",
+      "Rahu": "Заглушка для Saturn Trine Rahu",
+      "Ketu": "Заглушка для Saturn Trine Ketu",
+      "Fortuna": "Заглушка для Saturn Trine Fortuna",
+      "Selena": "Заглушка для Saturn Trine Selena"
+    },
+    "Uranus": {
+      "Neptune": "Заглушка для Uranus Trine Neptune",
+      "Pluto": "Заглушка для Uranus Trine Pluto",
+      "Proserpina": "Заглушка для Uranus Trine Proserpina",
+      "Chiron": "Заглушка для Uranus Trine Chiron",
+      "Lilith": "Заглушка для Uranus Trine Lilith",
+      "Rahu": "Заглушка для Uranus Trine Rahu",
+      "Ketu": "Заглушка для Uranus Trine Ketu",
+      "Fortuna": "Заглушка для Uranus Trine Fortuna",
+      "Selena": "Заглушка для Uranus Trine Selena"
+    },
+    "Neptune": {
+      "Pluto": "Заглушка для Neptune Trine Pluto",
+      "Proserpina": "Заглушка для Neptune Trine Proserpina",
+      "Chiron": "Заглушка для Neptune Trine Chiron",
+      "Lilith": "Заглушка для Neptune Trine Lilith",
+      "Rahu": "Заглушка для Neptune Trine Rahu",
+      "Ketu": "Заглушка для Neptune Trine Ketu",
+      "Fortuna": "Заглушка для Neptune Trine Fortuna",
+      "Selena": "Заглушка для Neptune Trine Selena"
+    },
+    "Pluto": {
+      "Proserpina": "Заглушка для Pluto Trine Proserpina",
+      "Chiron": "Заглушка для Pluto Trine Chiron",
+      "Lilith": "Заглушка для Pluto Trine Lilith",
+      "Rahu": "Заглушка для Pluto Trine Rahu",
+      "Ketu": "Заглушка для Pluto Trine Ketu",
+      "Fortuna": "Заглушка для Pluto Trine Fortuna",
+      "Selena": "Заглушка для Pluto Trine Selena"
+    },
+    "Proserpina": {
+      "Chiron": "Заглушка для Proserpina Trine Chiron",
+      "Lilith": "Заглушка для Proserpina Trine Lilith",
+      "Rahu": "Заглушка для Proserpina Trine Rahu",
+      "Ketu": "Заглушка для Proserpina Trine Ketu",
+      "Fortuna": "Заглушка для Proserpina Trine Fortuna",
+      "Selena": "Заглушка для Proserpina Trine Selena"
+    },
+    "Chiron": {
+      "Lilith": "Заглушка для Chiron Trine Lilith",
+      "Rahu": "Заглушка для Chiron Trine Rahu",
+      "Ketu": "Заглушка для Chiron Trine Ketu",
+      "Fortuna": "Заглушка для Chiron Trine Fortuna",
+      "Selena": "Заглушка для Chiron Trine Selena"
+    },
+    "Lilith": {
+      "Rahu": "Заглушка для Lilith Trine Rahu",
+      "Ketu": "Заглушка для Lilith Trine Ketu",
+      "Fortuna": "Заглушка для Lilith Trine Fortuna",
+      "Selena": "Заглушка для Lilith Trine Selena"
+    },
+    "Rahu": {
+      "Ketu": "Заглушка для Rahu Trine Ketu",
+      "Fortuna": "Заглушка для Rahu Trine Fortuna",
+      "Selena": "Заглушка для Rahu Trine Selena"
+    },
+    "Ketu": {
+      "Fortuna": "Заглушка для Ketu Trine Fortuna",
+      "Selena": "Заглушка для Ketu Trine Selena"
+    },
+    "Fortuna": {
+      "Selena": "Заглушка для Fortuna Trine Selena"
+    }
+  },
+  "Square": {
+    "Sun": {
+      "Moon": "Заглушка для Sun Square Moon",
+      "Mercury": "Заглушка для Sun Square Mercury",
+      "Venus": "Заглушка для Sun Square Venus",
+      "Mars": "Заглушка для Sun Square Mars",
+      "Jupiter": "Заглушка для Sun Square Jupiter",
+      "Saturn": "Заглушка для Sun Square Saturn",
+      "Uranus": "Заглушка для Sun Square Uranus",
+      "Neptune": "Заглушка для Sun Square Neptune",
+      "Pluto": "Заглушка для Sun Square Pluto",
+      "Proserpina": "Заглушка для Sun Square Proserpina",
+      "Chiron": "Заглушка для Sun Square Chiron",
+      "Lilith": "Заглушка для Sun Square Lilith",
+      "Rahu": "Заглушка для Sun Square Rahu",
+      "Ketu": "Заглушка для Sun Square Ketu",
+      "Fortuna": "Заглушка для Sun Square Fortuna",
+      "Selena": "Заглушка для Sun Square Selena"
+    },
+    "Moon": {
+      "Mercury": "Заглушка для Moon Square Mercury",
+      "Venus": "Заглушка для Moon Square Venus",
+      "Mars": "Заглушка для Moon Square Mars",
+      "Jupiter": "Заглушка для Moon Square Jupiter",
+      "Saturn": "Заглушка для Moon Square Saturn",
+      "Uranus": "Заглушка для Moon Square Uranus",
+      "Neptune": "Заглушка для Moon Square Neptune",
+      "Pluto": "Заглушка для Moon Square Pluto",
+      "Proserpina": "Заглушка для Moon Square Proserpina",
+      "Chiron": "Заглушка для Moon Square Chiron",
+      "Lilith": "Заглушка для Moon Square Lilith",
+      "Rahu": "Заглушка для Moon Square Rahu",
+      "Ketu": "Заглушка для Moon Square Ketu",
+      "Fortuna": "Заглушка для Moon Square Fortuna",
+      "Selena": "Заглушка для Moon Square Selena"
+    },
+    "Mercury": {
+      "Venus": "Заглушка для Mercury Square Venus",
+      "Mars": "Заглушка для Mercury Square Mars",
+      "Jupiter": "Заглушка для Mercury Square Jupiter",
+      "Saturn": "Заглушка для Mercury Square Saturn",
+      "Uranus": "Заглушка для Mercury Square Uranus",
+      "Neptune": "Заглушка для Mercury Square Neptune",
+      "Pluto": "Заглушка для Mercury Square Pluto",
+      "Proserpina": "Заглушка для Mercury Square Proserpina",
+      "Chiron": "Заглушка для Mercury Square Chiron",
+      "Lilith": "Заглушка для Mercury Square Lilith",
+      "Rahu": "Заглушка для Mercury Square Rahu",
+      "Ketu": "Заглушка для Mercury Square Ketu",
+      "Fortuna": "Заглушка для Mercury Square Fortuna",
+      "Selena": "Заглушка для Mercury Square Selena"
+    },
+    "Venus": {
+      "Mars": "Заглушка для Venus Square Mars",
+      "Jupiter": "Заглушка для Venus Square Jupiter",
+      "Saturn": "Заглушка для Venus Square Saturn",
+      "Uranus": "Заглушка для Venus Square Uranus",
+      "Neptune": "Заглушка для Venus Square Neptune",
+      "Pluto": "Заглушка для Venus Square Pluto",
+      "Proserpina": "Заглушка для Venus Square Proserpina",
+      "Chiron": "Заглушка для Venus Square Chiron",
+      "Lilith": "Заглушка для Venus Square Lilith",
+      "Rahu": "Заглушка для Venus Square Rahu",
+      "Ketu": "Заглушка для Venus Square Ketu",
+      "Fortuna": "Заглушка для Venus Square Fortuna",
+      "Selena": "Заглушка для Venus Square Selena"
+    },
+    "Mars": {
+      "Jupiter": "Заглушка для Mars Square Jupiter",
+      "Saturn": "Заглушка для Mars Square Saturn",
+      "Uranus": "Заглушка для Mars Square Uranus",
+      "Neptune": "Заглушка для Mars Square Neptune",
+      "Pluto": "Заглушка для Mars Square Pluto",
+      "Proserpina": "Заглушка для Mars Square Proserpina",
+      "Chiron": "Заглушка для Mars Square Chiron",
+      "Lilith": "Заглушка для Mars Square Lilith",
+      "Rahu": "Заглушка для Mars Square Rahu",
+      "Ketu": "Заглушка для Mars Square Ketu",
+      "Fortuna": "Заглушка для Mars Square Fortuna",
+      "Selena": "Заглушка для Mars Square Selena"
+    },
+    "Jupiter": {
+      "Saturn": "Заглушка для Jupiter Square Saturn",
+      "Uranus": "Заглушка для Jupiter Square Uranus",
+      "Neptune": "Заглушка для Jupiter Square Neptune",
+      "Pluto": "Заглушка для Jupiter Square Pluto",
+      "Proserpina": "Заглушка для Jupiter Square Proserpina",
+      "Chiron": "Заглушка для Jupiter Square Chiron",
+      "Lilith": "Заглушка для Jupiter Square Lilith",
+      "Rahu": "Заглушка для Jupiter Square Rahu",
+      "Ketu": "Заглушка для Jupiter Square Ketu",
+      "Fortuna": "Заглушка для Jupiter Square Fortuna",
+      "Selena": "Заглушка для Jupiter Square Selena"
+    },
+    "Saturn": {
+      "Uranus": "Заглушка для Saturn Square Uranus",
+      "Neptune": "Заглушка для Saturn Square Neptune",
+      "Pluto": "Заглушка для Saturn Square Pluto",
+      "Proserpina": "Заглушка для Saturn Square Proserpina",
+      "Chiron": "Заглушка для Saturn Square Chiron",
+      "Lilith": "Заглушка для Saturn Square Lilith",
+      "Rahu": "Заглушка для Saturn Square Rahu",
+      "Ketu": "Заглушка для Saturn Square Ketu",
+      "Fortuna": "Заглушка для Saturn Square Fortuna",
+      "Selena": "Заглушка для Saturn Square Selena"
+    },
+    "Uranus": {
+      "Neptune": "Заглушка для Uranus Square Neptune",
+      "Pluto": "Заглушка для Uranus Square Pluto",
+      "Proserpina": "Заглушка для Uranus Square Proserpina",
+      "Chiron": "Заглушка для Uranus Square Chiron",
+      "Lilith": "Заглушка для Uranus Square Lilith",
+      "Rahu": "Заглушка для Uranus Square Rahu",
+      "Ketu": "Заглушка для Uranus Square Ketu",
+      "Fortuna": "Заглушка для Uranus Square Fortuna",
+      "Selena": "Заглушка для Uranus Square Selena"
+    },
+    "Neptune": {
+      "Pluto": "Заглушка для Neptune Square Pluto",
+      "Proserpina": "Заглушка для Neptune Square Proserpina",
+      "Chiron": "Заглушка для Neptune Square Chiron",
+      "Lilith": "Заглушка для Neptune Square Lilith",
+      "Rahu": "Заглушка для Neptune Square Rahu",
+      "Ketu": "Заглушка для Neptune Square Ketu",
+      "Fortuna": "Заглушка для Neptune Square Fortuna",
+      "Selena": "Заглушка для Neptune Square Selena"
+    },
+    "Pluto": {
+      "Proserpina": "Заглушка для Pluto Square Proserpina",
+      "Chiron": "Заглушка для Pluto Square Chiron",
+      "Lilith": "Заглушка для Pluto Square Lilith",
+      "Rahu": "Заглушка для Pluto Square Rahu",
+      "Ketu": "Заглушка для Pluto Square Ketu",
+      "Fortuna": "Заглушка для Pluto Square Fortuna",
+      "Selena": "Заглушка для Pluto Square Selena"
+    },
+    "Proserpina": {
+      "Chiron": "Заглушка для Proserpina Square Chiron",
+      "Lilith": "Заглушка для Proserpina Square Lilith",
+      "Rahu": "Заглушка для Proserpina Square Rahu",
+      "Ketu": "Заглушка для Proserpina Square Ketu",
+      "Fortuna": "Заглушка для Proserpina Square Fortuna",
+      "Selena": "Заглушка для Proserpina Square Selena"
+    },
+    "Chiron": {
+      "Lilith": "Заглушка для Chiron Square Lilith",
+      "Rahu": "Заглушка для Chiron Square Rahu",
+      "Ketu": "Заглушка для Chiron Square Ketu",
+      "Fortuna": "Заглушка для Chiron Square Fortuna",
+      "Selena": "Заглушка для Chiron Square Selena"
+    },
+    "Lilith": {
+      "Rahu": "Заглушка для Lilith Square Rahu",
+      "Ketu": "Заглушка для Lilith Square Ketu",
+      "Fortuna": "Заглушка для Lilith Square Fortuna",
+      "Selena": "Заглушка для Lilith Square Selena"
+    },
+    "Rahu": {
+      "Ketu": "Заглушка для Rahu Square Ketu",
+      "Fortuna": "Заглушка для Rahu Square Fortuna",
+      "Selena": "Заглушка для Rahu Square Selena"
+    },
+    "Ketu": {
+      "Fortuna": "Заглушка для Ketu Square Fortuna",
+      "Selena": "Заглушка для Ketu Square Selena"
+    },
+    "Fortuna": {
+      "Selena": "Заглушка для Fortuna Square Selena"
+    }
+  },
+  "Sextile": {
+    "Sun": {
+      "Moon": "Заглушка для Sun Sextile Moon",
+      "Mercury": "Заглушка для Sun Sextile Mercury",
+      "Venus": "Заглушка для Sun Sextile Venus",
+      "Mars": "Заглушка для Sun Sextile Mars",
+      "Jupiter": "Заглушка для Sun Sextile Jupiter",
+      "Saturn": "Заглушка для Sun Sextile Saturn",
+      "Uranus": "Заглушка для Sun Sextile Uranus",
+      "Neptune": "Заглушка для Sun Sextile Neptune",
+      "Pluto": "Заглушка для Sun Sextile Pluto",
+      "Proserpina": "Заглушка для Sun Sextile Proserpina",
+      "Chiron": "Заглушка для Sun Sextile Chiron",
+      "Lilith": "Заглушка для Sun Sextile Lilith",
+      "Rahu": "Заглушка для Sun Sextile Rahu",
+      "Ketu": "Заглушка для Sun Sextile Ketu",
+      "Fortuna": "Заглушка для Sun Sextile Fortuna",
+      "Selena": "Заглушка для Sun Sextile Selena"
+    },
+    "Moon": {
+      "Mercury": "Заглушка для Moon Sextile Mercury",
+      "Venus": "Заглушка для Moon Sextile Venus",
+      "Mars": "Заглушка для Moon Sextile Mars",
+      "Jupiter": "Заглушка для Moon Sextile Jupiter",
+      "Saturn": "Заглушка для Moon Sextile Saturn",
+      "Uranus": "Заглушка для Moon Sextile Uranus",
+      "Neptune": "Заглушка для Moon Sextile Neptune",
+      "Pluto": "Заглушка для Moon Sextile Pluto",
+      "Proserpina": "Заглушка для Moon Sextile Proserpina",
+      "Chiron": "Заглушка для Moon Sextile Chiron",
+      "Lilith": "Заглушка для Moon Sextile Lilith",
+      "Rahu": "Заглушка для Moon Sextile Rahu",
+      "Ketu": "Заглушка для Moon Sextile Ketu",
+      "Fortuna": "Заглушка для Moon Sextile Fortuna",
+      "Selena": "Заглушка для Moon Sextile Selena"
+    },
+    "Mercury": {
+      "Venus": "Заглушка для Mercury Sextile Venus",
+      "Mars": "Заглушка для Mercury Sextile Mars",
+      "Jupiter": "Заглушка для Mercury Sextile Jupiter",
+      "Saturn": "Заглушка для Mercury Sextile Saturn",
+      "Uranus": "Заглушка для Mercury Sextile Uranus",
+      "Neptune": "Заглушка для Mercury Sextile Neptune",
+      "Pluto": "Заглушка для Mercury Sextile Pluto",
+      "Proserpina": "Заглушка для Mercury Sextile Proserpina",
+      "Chiron": "Заглушка для Mercury Sextile Chiron",
+      "Lilith": "Заглушка для Mercury Sextile Lilith",
+      "Rahu": "Заглушка для Mercury Sextile Rahu",
+      "Ketu": "Заглушка для Mercury Sextile Ketu",
+      "Fortuna": "Заглушка для Mercury Sextile Fortuna",
+      "Selena": "Заглушка для Mercury Sextile Selena"
+    },
+    "Venus": {
+      "Mars": "Заглушка для Venus Sextile Mars",
+      "Jupiter": "Заглушка для Venus Sextile Jupiter",
+      "Saturn": "Заглушка для Venus Sextile Saturn",
+      "Uranus": "Заглушка для Venus Sextile Uranus",
+      "Neptune": "Заглушка для Venus Sextile Neptune",
+      "Pluto": "Заглушка для Venus Sextile Pluto",
+      "Proserpina": "Заглушка для Venus Sextile Proserpina",
+      "Chiron": "Заглушка для Venus Sextile Chiron",
+      "Lilith": "Заглушка для Venus Sextile Lilith",
+      "Rahu": "Заглушка для Venus Sextile Rahu",
+      "Ketu": "Заглушка для Venus Sextile Ketu",
+      "Fortuna": "Заглушка для Venus Sextile Fortuna",
+      "Selena": "Заглушка для Venus Sextile Selena"
+    },
+    "Mars": {
+      "Jupiter": "Заглушка для Mars Sextile Jupiter",
+      "Saturn": "Заглушка для Mars Sextile Saturn",
+      "Uranus": "Заглушка для Mars Sextile Uranus",
+      "Neptune": "Заглушка для Mars Sextile Neptune",
+      "Pluto": "Заглушка для Mars Sextile Pluto",
+      "Proserpina": "Заглушка для Mars Sextile Proserpina",
+      "Chiron": "Заглушка для Mars Sextile Chiron",
+      "Lilith": "Заглушка для Mars Sextile Lilith",
+      "Rahu": "Заглушка для Mars Sextile Rahu",
+      "Ketu": "Заглушка для Mars Sextile Ketu",
+      "Fortuna": "Заглушка для Mars Sextile Fortuna",
+      "Selena": "Заглушка для Mars Sextile Selena"
+    },
+    "Jupiter": {
+      "Saturn": "Заглушка для Jupiter Sextile Saturn",
+      "Uranus": "Заглушка для Jupiter Sextile Uranus",
+      "Neptune": "Заглушка для Jupiter Sextile Neptune",
+      "Pluto": "Заглушка для Jupiter Sextile Pluto",
+      "Proserpina": "Заглушка для Jupiter Sextile Proserpina",
+      "Chiron": "Заглушка для Jupiter Sextile Chiron",
+      "Lilith": "Заглушка для Jupiter Sextile Lilith",
+      "Rahu": "Заглушка для Jupiter Sextile Rahu",
+      "Ketu": "Заглушка для Jupiter Sextile Ketu",
+      "Fortuna": "Заглушка для Jupiter Sextile Fortuna",
+      "Selena": "Заглушка для Jupiter Sextile Selena"
+    },
+    "Saturn": {
+      "Uranus": "Заглушка для Saturn Sextile Uranus",
+      "Neptune": "Заглушка для Saturn Sextile Neptune",
+      "Pluto": "Заглушка для Saturn Sextile Pluto",
+      "Proserpina": "Заглушка для Saturn Sextile Proserpina",
+      "Chiron": "Заглушка для Saturn Sextile Chiron",
+      "Lilith": "Заглушка для Saturn Sextile Lilith",
+      "Rahu": "Заглушка для Saturn Sextile Rahu",
+      "Ketu": "Заглушка для Saturn Sextile Ketu",
+      "Fortuna": "Заглушка для Saturn Sextile Fortuna",
+      "Selena": "Заглушка для Saturn Sextile Selena"
+    },
+    "Uranus": {
+      "Neptune": "Заглушка для Uranus Sextile Neptune",
+      "Pluto": "Заглушка для Uranus Sextile Pluto",
+      "Proserpina": "Заглушка для Uranus Sextile Proserpina",
+      "Chiron": "Заглушка для Uranus Sextile Chiron",
+      "Lilith": "Заглушка для Uranus Sextile Lilith",
+      "Rahu": "Заглушка для Uranus Sextile Rahu",
+      "Ketu": "Заглушка для Uranus Sextile Ketu",
+      "Fortuna": "Заглушка для Uranus Sextile Fortuna",
+      "Selena": "Заглушка для Uranus Sextile Selena"
+    },
+    "Neptune": {
+      "Pluto": "Заглушка для Neptune Sextile Pluto",
+      "Proserpina": "Заглушка для Neptune Sextile Proserpina",
+      "Chiron": "Заглушка для Neptune Sextile Chiron",
+      "Lilith": "Заглушка для Neptune Sextile Lilith",
+      "Rahu": "Заглушка для Neptune Sextile Rahu",
+      "Ketu": "Заглушка для Neptune Sextile Ketu",
+      "Fortuna": "Заглушка для Neptune Sextile Fortuna",
+      "Selena": "Заглушка для Neptune Sextile Selena"
+    },
+    "Pluto": {
+      "Proserpina": "Заглушка для Pluto Sextile Proserpina",
+      "Chiron": "Заглушка для Pluto Sextile Chiron",
+      "Lilith": "Заглушка для Pluto Sextile Lilith",
+      "Rahu": "Заглушка для Pluto Sextile Rahu",
+      "Ketu": "Заглушка для Pluto Sextile Ketu",
+      "Fortuna": "Заглушка для Pluto Sextile Fortuna",
+      "Selena": "Заглушка для Pluto Sextile Selena"
+    },
+    "Proserpina": {
+      "Chiron": "Заглушка для Proserpina Sextile Chiron",
+      "Lilith": "Заглушка для Proserpina Sextile Lilith",
+      "Rahu": "Заглушка для Proserpina Sextile Rahu",
+      "Ketu": "Заглушка для Proserpina Sextile Ketu",
+      "Fortuna": "Заглушка для Proserpina Sextile Fortuna",
+      "Selena": "Заглушка для Proserpina Sextile Selena"
+    },
+    "Chiron": {
+      "Lilith": "Заглушка для Chiron Sextile Lilith",
+      "Rahu": "Заглушка для Chiron Sextile Rahu",
+      "Ketu": "Заглушка для Chiron Sextile Ketu",
+      "Fortuna": "Заглушка для Chiron Sextile Fortuna",
+      "Selena": "Заглушка для Chiron Sextile Selena"
+    },
+    "Lilith": {
+      "Rahu": "Заглушка для Lilith Sextile Rahu",
+      "Ketu": "Заглушка для Lilith Sextile Ketu",
+      "Fortuna": "Заглушка для Lilith Sextile Fortuna",
+      "Selena": "Заглушка для Lilith Sextile Selena"
+    },
+    "Rahu": {
+      "Ketu": "Заглушка для Rahu Sextile Ketu",
+      "Fortuna": "Заглушка для Rahu Sextile Fortuna",
+      "Selena": "Заглушка для Rahu Sextile Selena"
+    },
+    "Ketu": {
+      "Fortuna": "Заглушка для Ketu Sextile Fortuna",
+      "Selena": "Заглушка для Ketu Sextile Selena"
+    },
+    "Fortuna": {
+      "Selena": "Заглушка для Fortuna Sextile Selena"
+    }
+  },
+  "Quincunx": {
+    "Sun": {
+      "Moon": "Заглушка для Sun Quincunx Moon",
+      "Mercury": "Заглушка для Sun Quincunx Mercury",
+      "Venus": "Заглушка для Sun Quincunx Venus",
+      "Mars": "Заглушка для Sun Quincunx Mars",
+      "Jupiter": "Заглушка для Sun Quincunx Jupiter",
+      "Saturn": "Заглушка для Sun Quincunx Saturn",
+      "Uranus": "Заглушка для Sun Quincunx Uranus",
+      "Neptune": "Заглушка для Sun Quincunx Neptune",
+      "Pluto": "Заглушка для Sun Quincunx Pluto",
+      "Proserpina": "Заглушка для Sun Quincunx Proserpina",
+      "Chiron": "Заглушка для Sun Quincunx Chiron",
+      "Lilith": "Заглушка для Sun Quincunx Lilith",
+      "Rahu": "Заглушка для Sun Quincunx Rahu",
+      "Ketu": "Заглушка для Sun Quincunx Ketu",
+      "Fortuna": "Заглушка для Sun Quincunx Fortuna",
+      "Selena": "Заглушка для Sun Quincunx Selena"
+    },
+    "Moon": {
+      "Mercury": "Заглушка для Moon Quincunx Mercury",
+      "Venus": "Заглушка для Moon Quincunx Venus",
+      "Mars": "Заглушка для Moon Quincunx Mars",
+      "Jupiter": "Заглушка для Moon Quincunx Jupiter",
+      "Saturn": "Заглушка для Moon Quincunx Saturn",
+      "Uranus": "Заглушка для Moon Quincunx Uranus",
+      "Neptune": "Заглушка для Moon Quincunx Neptune",
+      "Pluto": "Заглушка для Moon Quincunx Pluto",
+      "Proserpina": "Заглушка для Moon Quincunx Proserpina",
+      "Chiron": "Заглушка для Moon Quincunx Chiron",
+      "Lilith": "Заглушка для Moon Quincunx Lilith",
+      "Rahu": "Заглушка для Moon Quincunx Rahu",
+      "Ketu": "Заглушка для Moon Quincunx Ketu",
+      "Fortuna": "Заглушка для Moon Quincunx Fortuna",
+      "Selena": "Заглушка для Moon Quincunx Selena"
+    },
+    "Mercury": {
+      "Venus": "Заглушка для Mercury Quincunx Venus",
+      "Mars": "Заглушка для Mercury Quincunx Mars",
+      "Jupiter": "Заглушка для Mercury Quincunx Jupiter",
+      "Saturn": "Заглушка для Mercury Quincunx Saturn",
+      "Uranus": "Заглушка для Mercury Quincunx Uranus",
+      "Neptune": "Заглушка для Mercury Quincunx Neptune",
+      "Pluto": "Заглушка для Mercury Quincunx Pluto",
+      "Proserpina": "Заглушка для Mercury Quincunx Proserpina",
+      "Chiron": "Заглушка для Mercury Quincunx Chiron",
+      "Lilith": "Заглушка для Mercury Quincunx Lilith",
+      "Rahu": "Заглушка для Mercury Quincunx Rahu",
+      "Ketu": "Заглушка для Mercury Quincunx Ketu",
+      "Fortuna": "Заглушка для Mercury Quincunx Fortuna",
+      "Selena": "Заглушка для Mercury Quincunx Selena"
+    },
+    "Venus": {
+      "Mars": "Заглушка для Venus Quincunx Mars",
+      "Jupiter": "Заглушка для Venus Quincunx Jupiter",
+      "Saturn": "Заглушка для Venus Quincunx Saturn",
+      "Uranus": "Заглушка для Venus Quincunx Uranus",
+      "Neptune": "Заглушка для Venus Quincunx Neptune",
+      "Pluto": "Заглушка для Venus Quincunx Pluto",
+      "Proserpina": "Заглушка для Venus Quincunx Proserpina",
+      "Chiron": "Заглушка для Venus Quincunx Chiron",
+      "Lilith": "Заглушка для Venus Quincunx Lilith",
+      "Rahu": "Заглушка для Venus Quincunx Rahu",
+      "Ketu": "Заглушка для Venus Quincunx Ketu",
+      "Fortuna": "Заглушка для Venus Quincunx Fortuna",
+      "Selena": "Заглушка для Venus Quincunx Selena"
+    },
+    "Mars": {
+      "Jupiter": "Заглушка для Mars Quincunx Jupiter",
+      "Saturn": "Заглушка для Mars Quincunx Saturn",
+      "Uranus": "Заглушка для Mars Quincunx Uranus",
+      "Neptune": "Заглушка для Mars Quincunx Neptune",
+      "Pluto": "Заглушка для Mars Quincunx Pluto",
+      "Proserpina": "Заглушка для Mars Quincunx Proserpina",
+      "Chiron": "Заглушка для Mars Quincunx Chiron",
+      "Lilith": "Заглушка для Mars Quincunx Lilith",
+      "Rahu": "Заглушка для Mars Quincunx Rahu",
+      "Ketu": "Заглушка для Mars Quincunx Ketu",
+      "Fortuna": "Заглушка для Mars Quincunx Fortuna",
+      "Selena": "Заглушка для Mars Quincunx Selena"
+    },
+    "Jupiter": {
+      "Saturn": "Заглушка для Jupiter Quincunx Saturn",
+      "Uranus": "Заглушка для Jupiter Quincunx Uranus",
+      "Neptune": "Заглушка для Jupiter Quincunx Neptune",
+      "Pluto": "Заглушка для Jupiter Quincunx Pluto",
+      "Proserpina": "Заглушка для Jupiter Quincunx Proserpina",
+      "Chiron": "Заглушка для Jupiter Quincunx Chiron",
+      "Lilith": "Заглушка для Jupiter Quincunx Lilith",
+      "Rahu": "Заглушка для Jupiter Quincunx Rahu",
+      "Ketu": "Заглушка для Jupiter Quincunx Ketu",
+      "Fortuna": "Заглушка для Jupiter Quincunx Fortuna",
+      "Selena": "Заглушка для Jupiter Quincunx Selena"
+    },
+    "Saturn": {
+      "Uranus": "Заглушка для Saturn Quincunx Uranus",
+      "Neptune": "Заглушка для Saturn Quincunx Neptune",
+      "Pluto": "Заглушка для Saturn Quincunx Pluto",
+      "Proserpina": "Заглушка для Saturn Quincunx Proserpina",
+      "Chiron": "Заглушка для Saturn Quincunx Chiron",
+      "Lilith": "Заглушка для Saturn Quincunx Lilith",
+      "Rahu": "Заглушка для Saturn Quincunx Rahu",
+      "Ketu": "Заглушка для Saturn Quincunx Ketu",
+      "Fortuna": "Заглушка для Saturn Quincunx Fortuna",
+      "Selena": "Заглушка для Saturn Quincunx Selena"
+    },
+    "Uranus": {
+      "Neptune": "Заглушка для Uranus Quincunx Neptune",
+      "Pluto": "Заглушка для Uranus Quincunx Pluto",
+      "Proserpina": "Заглушка для Uranus Quincunx Proserpina",
+      "Chiron": "Заглушка для Uranus Quincunx Chiron",
+      "Lilith": "Заглушка для Uranus Quincunx Lilith",
+      "Rahu": "Заглушка для Uranus Quincunx Rahu",
+      "Ketu": "Заглушка для Uranus Quincunx Ketu",
+      "Fortuna": "Заглушка для Uranus Quincunx Fortuna",
+      "Selena": "Заглушка для Uranus Quincunx Selena"
+    },
+    "Neptune": {
+      "Pluto": "Заглушка для Neptune Quincunx Pluto",
+      "Proserpina": "Заглушка для Neptune Quincunx Proserpina",
+      "Chiron": "Заглушка для Neptune Quincunx Chiron",
+      "Lilith": "Заглушка для Neptune Quincunx Lilith",
+      "Rahu": "Заглушка для Neptune Quincunx Rahu",
+      "Ketu": "Заглушка для Neptune Quincunx Ketu",
+      "Fortuna": "Заглушка для Neptune Quincunx Fortuna",
+      "Selena": "Заглушка для Neptune Quincunx Selena"
+    },
+    "Pluto": {
+      "Proserpina": "Заглушка для Pluto Quincunx Proserpina",
+      "Chiron": "Заглушка для Pluto Quincunx Chiron",
+      "Lilith": "Заглушка для Pluto Quincunx Lilith",
+      "Rahu": "Заглушка для Pluto Quincunx Rahu",
+      "Ketu": "Заглушка для Pluto Quincunx Ketu",
+      "Fortuna": "Заглушка для Pluto Quincunx Fortuna",
+      "Selena": "Заглушка для Pluto Quincunx Selena"
+    },
+    "Proserpina": {
+      "Chiron": "Заглушка для Proserpina Quincunx Chiron",
+      "Lilith": "Заглушка для Proserpina Quincunx Lilith",
+      "Rahu": "Заглушка для Proserpina Quincunx Rahu",
+      "Ketu": "Заглушка для Proserpina Quincunx Ketu",
+      "Fortuna": "Заглушка для Proserpina Quincunx Fortuna",
+      "Selena": "Заглушка для Proserpina Quincunx Selena"
+    },
+    "Chiron": {
+      "Lilith": "Заглушка для Chiron Quincunx Lilith",
+      "Rahu": "Заглушка для Chiron Quincunx Rahu",
+      "Ketu": "Заглушка для Chiron Quincunx Ketu",
+      "Fortuna": "Заглушка для Chiron Quincunx Fortuna",
+      "Selena": "Заглушка для Chiron Quincunx Selena"
+    },
+    "Lilith": {
+      "Rahu": "Заглушка для Lilith Quincunx Rahu",
+      "Ketu": "Заглушка для Lilith Quincunx Ketu",
+      "Fortuna": "Заглушка для Lilith Quincunx Fortuna",
+      "Selena": "Заглушка для Lilith Quincunx Selena"
+    },
+    "Rahu": {
+      "Ketu": "Заглушка для Rahu Quincunx Ketu",
+      "Fortuna": "Заглушка для Rahu Quincunx Fortuna",
+      "Selena": "Заглушка для Rahu Quincunx Selena"
+    },
+    "Ketu": {
+      "Fortuna": "Заглушка для Ketu Quincunx Fortuna",
+      "Selena": "Заглушка для Ketu Quincunx Selena"
+    },
+    "Fortuna": {
+      "Selena": "Заглушка для Fortuna Quincunx Selena"
+    }
+  }
+}
