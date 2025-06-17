@@ -274,13 +274,17 @@ export class SwephHelper {
     const housesActivity = this.calculateHousesActivity(planets, houses.houses)
 
     return {
-      datetime: utcDate.toISOString(),
-      timezone,
-      latitude,
-      longitude,
-      planets,
-      houses,
-      housesActivity,
+      sourceData: {
+        datetime: utcDate.toISOString(),
+        timezone,
+        latitude,
+        longitude,
+      },
+      result: {
+        planets,
+        houses,
+        housesActivity,
+      },
     }
   }
 }
