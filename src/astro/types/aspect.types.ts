@@ -38,6 +38,12 @@ export class Aspect {
   strength: number
 }
 
+export enum AspectCategory {
+  HARMONIOUS = 'harmonious',
+  TENSE = 'tense',
+  NEUTRAL = 'neutral',
+}
+
 export class StrongestPlanet {
   @ApiProperty({ example: 'Sun' })
   planet: string
@@ -53,11 +59,38 @@ export enum EvaluateChartStrengthVariables {
   VERY_STRONG = 'very strong',
 }
 
-export class EvaluateChartStrength {
-  @ApiProperty({ example: 80, description: 'Шкала аспектов от 0 до 100' })
-  score: number
-  @ApiProperty({ example: EvaluateChartStrengthVariables.STRONG, description: 'Расшифровка шкалы' })
-  label: EvaluateChartStrengthVariables
+class AspectCategoryStats {
+  @ApiProperty({ example: 12 })
+  count: number
+
+  @ApiProperty({ example: 43.0 })
+  percent: number
+
+  @ApiProperty({ type: [String], example: ['Trine', 'Sextile'] })
+  items: AspectType[]
+}
+
+export class ChartAspectStatistics {
+  @ApiProperty({ example: 66 })
+  maxPossibleAspects: number
+
+  @ApiProperty({ example: 28 })
+  totalAspects: number
+
+  @ApiProperty({ example: 42 })
+  normalizedScore: number
+
+  @ApiProperty({ example: 'middle' })
+  label: EvaluateChartStrengthVariables;
+
+  @ApiProperty({ type: AspectCategoryStats })
+  [AspectCategory.HARMONIOUS]: AspectCategoryStats;
+
+  @ApiProperty({ type: AspectCategoryStats })
+  [AspectCategory.TENSE]: AspectCategoryStats;
+
+  @ApiProperty({ type: AspectCategoryStats })
+  [AspectCategory.NEUTRAL]: AspectCategoryStats
 }
 
 export type AspectOrbSettings = Partial<Record<AspectType, number>>

@@ -6,7 +6,6 @@ import { AspectType } from '../types/aspect.types'
 import { ZodiacSign } from '../types/common.types'
 import { AstroConfigurationType } from '../types/configuration.types'
 import { PlanetName, DictionaryKey, AstroDictionaryCategory } from './dictionary.types'
-import { PLANET_IN_SIGN_SYSTEM_PROMPT } from './constants/lm-prompts'
 
 @Injectable()
 export class AstroDictionaryService {
@@ -18,26 +17,6 @@ export class AstroDictionaryService {
         ? join(process.cwd(), 'src', 'astro', 'astro-dictionary', 'data')
         : join(__dirname, 'data')
   }
-
-  private async fetchLlm(): Promise<string | null> {
-    const response = await fetch('http://localhost:1234/v1/chat/completions', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'mistralai/mistral-nemo-instruct-2407',
-        messages: [
-          { role: 'system', content: PLANET_IN_SIGN_SYSTEM_PROMPT },
-          { role: 'user', content: `` },
-        ],
-      }),
-    })
-
-    const data = await response.json()
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-    return data?.choices?.[0]?.message?.content?.trim() || null
-  }
-
   /**
    * Возвращает интерпретацию для дома в знаке зодиака
    */

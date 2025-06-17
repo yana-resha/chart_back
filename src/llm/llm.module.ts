@@ -8,6 +8,6 @@ import { AstroLmController } from './astro-lm.controller'
   imports: [HttpModule],
   providers: [LlmService, AstroLmService],
   controllers: [AstroLmController],
-  exports: [AstroLmService],
+  exports: [LlmService, AstroLmService],
 })
 export class LlmModule {}

@@ -6,12 +6,14 @@ export class AspectConfigurationDetector {
     const configurations: AstroConfiguration[] = []
 
     const trines = aspects.filter((aspect) => aspect.aspectType === AspectType.Trine && aspect.orb <= 5)
-
     const oppositions = aspects.filter(
       (aspect) => aspect.aspectType === AspectType.Opposition && aspect.orb <= 6,
     )
-
     const squares = aspects.filter((aspect) => aspect.aspectType === AspectType.Square && aspect.orb <= 6)
+    const sextiles = aspects.filter((aspect) => aspect.aspectType === AspectType.Sextile && aspect.orb <= 5)
+    const quincunxes = aspects.filter(
+      (aspect) => aspect.aspectType === AspectType.Quincunx && aspect.orb <= 5,
+    )
 
     // --- GRAND TRINE ---
     const candidates = new Map<string, Set<string>>()
@@ -73,6 +75,28 @@ export class AspectConfigurationDetector {
             }
           }
         }
+      }
+    }
+
+    // --- BISEXILE ---
+    for (const sextile of sextiles) {
+      const quincunx = quincunxes.find((q) => q.planetA === sextile.planetA || q.planetB === sextile.planetB)
+      if (quincunx) {
+        configurations.push({
+          type: AstroConfigurationType.Bisexile,
+          planets: [sextile.planetA, sextile.planetB],
+        })
+      }
+    }
+
+    // --- SAIL ---
+    for (const trine of trines) {
+      const square = squares.find((sq) => sq.planetA === trine.planetA || sq.planetB === trine.planetB)
+      if (square) {
+        configurations.push({
+          type: AstroConfigurationType.Sail,
+          planets: [trine.planetA, trine.planetB, square.planetA, square.planetB],
+        })
       }
     }
 

@@ -1,3 +1,4 @@
+import { ASPECT_CATEGORY_MAP } from '../constants/aspect.constants'
 import {
   AspectType,
   AspectOrbSettings,
@@ -5,8 +6,8 @@ import {
   PlanetImportanceSettings,
   Aspect,
   StrongestPlanet,
-  EvaluateChartStrength,
   EvaluateChartStrengthVariables,
+  AspectCategory,
 } from '../types/aspect.types'
 import { PlanetPosition } from '../types/sweph.types'
 
@@ -175,8 +176,8 @@ export class AspectCalculator {
     for (const aspect of aspects) {
       const strength = aspect.strength
 
-      planetStrengthMap[aspect.planetA] = (planetStrengthMap[aspect.planetB] ?? 0) + strength
-      planetStrengthMap[aspect.planetB] = (planetStrengthMap[aspect.planetA] ?? 0) + strength
+      planetStrengthMap[aspect.planetA] = (planetStrengthMap[aspect.planetA] ?? 0) + strength
+      planetStrengthMap[aspect.planetB] = (planetStrengthMap[aspect.planetB] ?? 0) + strength
     }
 
     const strongest = Object.entries(planetStrengthMap).reduce(
@@ -188,13 +189,12 @@ export class AspectCalculator {
   }
 
   // оценка карты по количеству аспектов
-  static evaluateChartStrength(aspects: Aspect[]): EvaluateChartStrength {
-    const maxPossibleAspects = (12 * 11) / 2 // максимальное количество пар между 12 планетами
+  static calculateChartAspectStatistics(aspects: Aspect[]) {
+    const maxPossibleAspects = (12 * 11) / 2
     const aspectCount = aspects.length
     const normalizedScore = Math.min((aspectCount / maxPossibleAspects) * 100, 100)
 
     let label: EvaluateChartStrengthVariables
-
     if (normalizedScore < 20) {
       label = EvaluateChartStrengthVariables.VERY_LOW
     } else if (normalizedScore < 40) {
@@ -207,9 +207,23 @@ export class AspectCalculator {
       label = EvaluateChartStrengthVariables.VERY_STRONG
     }
 
+    const buildCategory = (aspectTypes: AspectType[]) => {
+      const filtered = aspects.filter((a) => aspectTypes.includes(a.aspectType))
+      return {
+        count: filtered.length,
+        percent: parseFloat(((filtered.length / aspectCount) * 100).toFixed(1)),
+        items: aspectTypes,
+      }
+    }
+
     return {
-      score: Math.round(normalizedScore),
+      maxPossibleAspects,
+      totalAspects: aspectCount,
+      normalizedScore: Math.round(normalizedScore),
       label,
+      [AspectCategory.HARMONIOUS]: buildCategory(ASPECT_CATEGORY_MAP[AspectCategory.HARMONIOUS]),
+      [AspectCategory.TENSE]: buildCategory(ASPECT_CATEGORY_MAP[AspectCategory.TENSE]),
+      [AspectCategory.NEUTRAL]: buildCategory(ASPECT_CATEGORY_MAP[AspectCategory.NEUTRAL]),
     }
   }
 }

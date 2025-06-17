@@ -5,6 +5,7 @@ import * as crypto from 'crypto'
 import { LlmModel } from './types/llm-model.enum'
 import { AstroChartType } from 'src/common/enums/astro-chart-type.enum'
 import { ChartTypeDescriptions } from './constants/chart-type-descriptions'
+import { LLM_CHAT_ROLE } from 'src/common/enums/llm.enum'
 
 @Injectable()
 export class AstroLmService {
@@ -18,13 +19,24 @@ export class AstroLmService {
       return this.cache.get(cacheKey)!
     }
 
-    const systemPrompt = ChartTypeDescriptions[chartType]
-    const userPrompt = JSON.stringify(data, null, 2)
+    const systemPrompt = {
+      role: LLM_CHAT_ROLE.SYSTEM,
+      content: ChartTypeDescriptions[chartType],
+    }
+    const userPrompt = {
+      role: LLM_CHAT_ROLE.USER,
+      content: JSON.stringify(data, null, 2),
+    }
 
-    const response = await this.llmService.chat(LlmModel.MistralNemo, systemPrompt, userPrompt)
-    this.cache.set(cacheKey, response)
+    const result = await this.llmService.chat(LlmModel.MistralNemo, [systemPrompt, userPrompt])
 
-    return response
+    if (result.finishReason === 'stop') {
+      this.cache.set(cacheKey, result.content)
+    } else {
+      console.warn(`⚠️ Ответ модели завершился по причине: "${result.finishReason}" — не кэшируем.`)
+    }
+
+    return result.content
   }
 
   private getCacheKey(data: AstroInterpretationDto): string {
