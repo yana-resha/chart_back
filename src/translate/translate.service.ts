@@ -81,7 +81,7 @@ export class TranslateService {
     @InjectModel(GeonamesAdmin2) private readonly geonamesAdmin2: typeof GeonamesAdmin2,
     @InjectModel(GeonamesCity) private readonly geonamesCity: typeof GeonamesCity,
   ) {
-    this.transcribeCitiesWithLlm()
+    //this.transcribeCitiesWithLlm()
   }
 
   /**

@@ -87,12 +87,20 @@ export interface IHousesActivity {
   [key: number]: HouseActivityVariables
 }
 
-export interface AstroCalculationResult {
+export interface AstroCalculationSourceData {
   datetime: string
   timezone: number
   latitude: number
   longitude: number
+}
+
+export interface AstroCalculationValue {
   planets: PlanetPosition[]
   houses: Houses
   housesActivity: IHousesActivity
+}
+
+export interface AstroCalculationResult {
+  sourceData: AstroCalculationSourceData
+  result: AstroCalculationValue
 }

@@ -5,6 +5,12 @@ import { AxiosResponse } from 'axios'
 import { ChatCompletionResponse } from './types/chat-completion-response'
 import { ChatCompletionOptions } from './types/chat-completion-options'
 import { LlmModel } from './types/llm-model.enum'
+import { ILLMChatMessage } from 'src/common/types/llm-chat.type'
+
+export interface LlmChatResult {
+  content: string
+  finishReason: string | null
+}
 
 @Injectable()
 export class LlmService {
@@ -14,29 +20,28 @@ export class LlmService {
 
   async chat(
     model: LlmModel = LlmModel.MistralNemo,
-    systemPrompt: string,
-    userPrompt: string,
+    messages: ILLMChatMessage[],
     options: ChatCompletionOptions = {},
-  ): Promise<string> {
+  ): Promise<LlmChatResult> {
     const payload = {
       model,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt },
-      ],
+      messages,
       temperature: options.temperature ?? 0.6,
       top_p: options.top_p ?? 1,
-      //max_tokens: options.max_tokens ?? 1000,
       presence_penalty: options.presence_penalty ?? 0,
       frequency_penalty: options.frequency_penalty ?? 0,
       ...(options.stop ? { stop: options.stop } : {}),
     }
+
     const response: AxiosResponse<ChatCompletionResponse> = await lastValueFrom(
       this.httpService.post(`${this.baseUrl}/chat/completions`, payload),
     )
 
-    console.log('Finish reason:', response.data.choices[0].finish_reason)
+    const choice = response.data.choices[0]
 
-    return response.data.choices[0].message.content.trim()
+    return {
+      content: choice.message.content.trim(),
+      finishReason: choice.finish_reason,
+    }
   }
 }

@@ -1,97 +1,109 @@
-import { ApiExtraModels, ApiProperty, getSchemaPath } from '@nestjs/swagger'
-import { AspectType } from 'src/astro/types/aspect.types'
-import { AstroConfigurationType } from 'src/astro/types/configuration.types'
-import { AstroDictionaryCategory } from '../dictionary.types'
-import { Planet_Variables, ZodiacSign } from 'src/astro/types/common.types'
+import { ApiExtraModels, ApiProperty, getSchemaPath, IntersectionType } from '@nestjs/swagger'
+import { Type } from '@nestjs/common'
 import { AstroChartType } from 'src/common/enums/astro-chart-type.enum'
+import {
+  CategoryAspectItem,
+  CategoryConfigurationItem,
+  CategoryHouseInSignItem,
+  CategoryPlanetInHouseItem,
+  CategoryPlanetInSignItem,
+  PureAspectItem,
+  PureConfigurationItem,
+  PureHouseInSignItem,
+  PurePlanetInHouseItem,
+  PurePlanetInSignItem,
+} from './items.dto'
 
-export class HouseInSignResponseDto {
-  @ApiProperty({ enum: AstroDictionaryCategory, default: AstroDictionaryCategory.HOUSE_IN_SIGN })
-  category: AstroDictionaryCategory.HOUSE_IN_SIGN
-
-  @ApiProperty({ type: Number, minimum: 1, maximum: 12 })
-  house: number
-
-  @ApiProperty({ enum: ZodiacSign })
-  sign: ZodiacSign
-
-  @ApiProperty({ example: 'Первый дом в Овне делает человека инициативным и целеустремлённым...' })
+// --- Общее значение ---
+export class BaseItemValue {
+  @ApiProperty({ example: 'Текст интерпретации…' })
   text: string | null
 }
 
-export class PlanetInSignResponseDto {
-  @ApiProperty({ enum: AstroDictionaryCategory, default: AstroDictionaryCategory.PLANET_IN_SIGN })
-  category: AstroDictionaryCategory.PLANET_IN_SIGN
-
-  @ApiProperty({ enum: Planet_Variables })
-  planet: Planet_Variables
-
-  @ApiProperty({ enum: ZodiacSign })
-  sign: ZodiacSign
-
-  @ApiProperty({ example: 'Солнце в Козероге делает человека целеустремлённым...' })
-  text: string | null
+// --- Обобщённый тип ответа ---
+export function BaseDictionaryItemResponseDto<T extends Type<any>>(Base: T) {
+  return IntersectionType(Base, BaseItemValue)
 }
 
-export class AspectResponseDto {
-  @ApiProperty({ enum: AstroDictionaryCategory, default: AstroDictionaryCategory.ASPECT })
-  category: AstroDictionaryCategory.ASPECT
+// --- Чистые response DTO ---
+export class PureHouseInSignItemResponseDto extends BaseDictionaryItemResponseDto(PureHouseInSignItem) {}
+export class PurePlanetInSignItemResponseDto extends BaseDictionaryItemResponseDto(PurePlanetInSignItem) {}
+export class PureAspectItemResponseDto extends BaseDictionaryItemResponseDto(PureAspectItem) {}
+export class PurePlanetInHouseItemResponseDto extends BaseDictionaryItemResponseDto(PurePlanetInHouseItem) {}
+export class PureConfigurationResponseDto extends BaseDictionaryItemResponseDto(PureConfigurationItem) {}
 
-  @ApiProperty({ enum: Planet_Variables })
-  planetA: Planet_Variables
+// --- Response DTO с категорией ---
+export class HouseInSignItemResponseDto extends BaseDictionaryItemResponseDto(CategoryHouseInSignItem) {}
+export class PlanetInSignItemResponseDto extends BaseDictionaryItemResponseDto(CategoryPlanetInSignItem) {}
+export class AspectItemResponseDto extends BaseDictionaryItemResponseDto(CategoryAspectItem) {}
+export class PlanetInHouseItemResponseDto extends BaseDictionaryItemResponseDto(CategoryPlanetInHouseItem) {}
+export class ConfigurationItemResponseDto extends BaseDictionaryItemResponseDto(CategoryConfigurationItem) {}
 
-  @ApiProperty({ enum: Planet_Variables })
-  planetB: Planet_Variables
-
-  @ApiProperty({ enum: AspectType })
-  aspect: AspectType
-
-  @ApiProperty({ example: 'Солнце в соединении с Луной делает натуру целостной...' })
-  text: string | null
+// --- Генератор CategoryResponseItem<T> ---
+export function createCategoryResponseItemDto<T extends Type<any>>(Base: T) {
+  class TextMixin {
+    @ApiProperty({ example: 'Очень яркое и импульсивное проявление…' })
+    text: string
+  }
+  return IntersectionType(Base, TextMixin)
 }
 
-export class PlanetInHouseResponseDto {
-  @ApiProperty({ enum: AstroDictionaryCategory, default: AstroDictionaryCategory.PLANET_IN_HOUSE })
-  category: AstroDictionaryCategory.PLANET_IN_HOUSE
+// --- Response DTO по категориям ---
+export class ConfigurationCategoryResponseItem extends createCategoryResponseItemDto(PureConfigurationItem) {}
+export class PlanetInHouseCategoryResponseItem extends createCategoryResponseItemDto(PurePlanetInHouseItem) {}
+export class AspectCategoryResponseItem extends createCategoryResponseItemDto(PureAspectItem) {}
+export class PlanetInSignCategoryResponseItem extends createCategoryResponseItemDto(PurePlanetInSignItem) {}
+export class HouseInSignCategoryResponseItem extends createCategoryResponseItemDto(PureHouseInSignItem) {}
 
-  @ApiProperty({ enum: Planet_Variables })
-  planet: Planet_Variables
+export class ConfigurationCategoryResponseDto {
+  @ApiProperty({ enum: AstroChartType })
+  chart: AstroChartType
 
-  @ApiProperty({ type: Number, minimum: 1, maximum: 12 })
-  house: number
-
-  @ApiProperty({ example: 'Марс во втором доме указывает на активное отношение к финансам...' })
-  text: string | null
+  @ApiProperty({ type: [ConfigurationCategoryResponseItem] })
+  items: ConfigurationCategoryResponseItem[]
 }
 
-export class ConfigurationResponseDto {
-  @ApiProperty({ enum: AstroDictionaryCategory, default: AstroDictionaryCategory.CONFIGURATION })
-  category: AstroDictionaryCategory.CONFIGURATION
+export class PlanetInHouseCategoryResponseDto {
+  @ApiProperty({ enum: AstroChartType })
+  chart: AstroChartType
 
-  @ApiProperty({ enum: AstroConfigurationType })
-  config: AstroConfigurationType
-
-  @ApiProperty({ type: [String], enum: Planet_Variables })
-  planets: Planet_Variables[]
-
-  @ApiProperty({ example: 'Конфигурация Тау-квадрат показывает внутреннее напряжение...' })
-  text: string | null
+  @ApiProperty({ type: [PlanetInHouseCategoryResponseItem] })
+  items: PlanetInHouseCategoryResponseItem[]
 }
 
+export class AspectCategoryResponseDto {
+  @ApiProperty({ enum: AstroChartType })
+  chart: AstroChartType
+
+  @ApiProperty({ type: [AspectCategoryResponseItem] })
+  items: AspectCategoryResponseItem[]
+}
+
+export class PlanetInSignCategoryResponseDto {
+  @ApiProperty({ enum: AstroChartType })
+  chart: AstroChartType
+
+  @ApiProperty({ type: [PlanetInSignCategoryResponseItem] })
+  items: PlanetInSignCategoryResponseItem[]
+}
+
+export class HouseInSignCategoryResponseDto {
+  @ApiProperty({ enum: AstroChartType })
+  chart: AstroChartType
+
+  @ApiProperty({ type: [HouseInSignCategoryResponseItem] })
+  items: HouseInSignCategoryResponseItem[]
+}
+
+// --- Response DTO для bulk запроса с категориями ---
 @ApiExtraModels(
-  PlanetInSignResponseDto,
-  AspectResponseDto,
-  PlanetInHouseResponseDto,
-  ConfigurationResponseDto,
+  AspectItemResponseDto,
+  ConfigurationItemResponseDto,
+  HouseInSignItemResponseDto,
+  PlanetInHouseItemResponseDto,
+  PlanetInSignItemResponseDto,
 )
-@ApiExtraModels(
-  PlanetInSignResponseDto,
-  AspectResponseDto,
-  PlanetInHouseResponseDto,
-  ConfigurationResponseDto,
-  HouseInSignResponseDto, // 🆕
-)
-export class DictionaryTextResponseDto {
+export class BulkDictionaryResponseDto {
   @ApiProperty({ enum: AstroChartType })
   chart: AstroChartType
 
@@ -99,19 +111,19 @@ export class DictionaryTextResponseDto {
     type: 'array',
     items: {
       oneOf: [
-        { $ref: getSchemaPath(PlanetInSignResponseDto) },
-        { $ref: getSchemaPath(AspectResponseDto) },
-        { $ref: getSchemaPath(PlanetInHouseResponseDto) },
-        { $ref: getSchemaPath(ConfigurationResponseDto) },
-        { $ref: getSchemaPath(HouseInSignResponseDto) },
+        { $ref: getSchemaPath(AspectItemResponseDto) },
+        { $ref: getSchemaPath(ConfigurationItemResponseDto) },
+        { $ref: getSchemaPath(HouseInSignItemResponseDto) },
+        { $ref: getSchemaPath(PlanetInHouseItemResponseDto) },
+        { $ref: getSchemaPath(PlanetInSignItemResponseDto) },
       ],
     },
   })
   items: Array<
-    | PlanetInSignResponseDto
-    | AspectResponseDto
-    | PlanetInHouseResponseDto
-    | ConfigurationResponseDto
-    | HouseInSignResponseDto
+    | AspectItemResponseDto
+    | ConfigurationItemResponseDto
+    | HouseInSignItemResponseDto
+    | PlanetInHouseItemResponseDto
+    | PlanetInSignItemResponseDto
   >
 }
