@@ -12,6 +12,9 @@ export class FullNatalChartQueryDto {
   })
   time: string
 
+  @ApiProperty({ example: 'Кумертау' })
+  place?: string
+
   @ApiProperty({ example: 5 })
   @IsNumber()
   @Min(-12)

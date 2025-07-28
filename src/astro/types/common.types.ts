@@ -30,8 +30,8 @@ export enum Planet_Variables {
   Proserpina = 'Proserpina',
   Chiron = 'Chiron',
   Lilith = 'Lilith',
-  Rahu = 'Rahu',
   Ketu = 'Ketu', // Южный узел будет вычисляться как Rahu + 180°
+  Rahu = 'Rahu',
   Fortuna = 'Fortuna',
   Selena = 'Selena',
 }

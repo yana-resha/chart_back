@@ -32,13 +32,18 @@ export const Planets: Record<Planet_Variables, number> = {
   [Planet_Variables.Proserpina]: SE_PROSERPINA,
   [Planet_Variables.Chiron]: SE_CHIRON,
   [Planet_Variables.Lilith]: SE_MEAN_APOG,
-  [Planet_Variables.Rahu]: SE_TRUE_NODE,
   [Planet_Variables.Ketu]: SE_TRUE_NODE, // Южный узел будет вычисляться как Rahu + 180°
+  [Planet_Variables.Rahu]: SE_TRUE_NODE,
   [Planet_Variables.Fortuna]: -1,
   [Planet_Variables.Selena]: -2,
 }
 
-export const FICTITIOUS_PLANETS = ['Ketu', 'Fortuna', 'Selena']
+// Это планеты которые я рассчитываю не по эфемеридам, не трогать их для других целей!
+export const FICTITIOUS_PLANETS: string[] = [
+  Planet_Variables.Ketu,
+  Planet_Variables.Fortuna,
+  Planet_Variables.Selena,
+]
 
 export type Planet = keyof typeof Planets
 
@@ -92,6 +97,8 @@ export interface AstroCalculationSourceData {
   timezone: number
   latitude: number
   longitude: number
+  jd: number
+  place?: string
 }
 
 export interface AstroCalculationValue {

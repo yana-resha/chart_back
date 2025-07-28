@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common'
 import { InjectModel } from '@nestjs/sequelize'
 import { GeonamesCountry } from 'src/locality/models/geonames-country.model'
-import { Op } from 'sequelize'
+import { Op, Sequelize } from 'sequelize'
 import { AppException } from 'src/common/errors/app.exception'
 import { GeonamesAdmin1 } from 'src/locality/models/geonames-admin-1.model'
 import { GeonamesAdmin2 } from 'src/locality/models/geonames-admin-2.model'
@@ -81,7 +81,7 @@ export class TranslateService {
     @InjectModel(GeonamesAdmin2) private readonly geonamesAdmin2: typeof GeonamesAdmin2,
     @InjectModel(GeonamesCity) private readonly geonamesCity: typeof GeonamesCity,
   ) {
-    //this.transcribeCitiesWithLlm()
+    /* this.transcribeCitiesWithLlm() */
   }
 
   /**
@@ -194,52 +194,91 @@ export class TranslateService {
 
   async transcribeCitiesWithLlm() {
     const BATCH_SIZE = 5000
-    let offset = 0
-    let batchNumber = 1
+    const CONCURRENT_LIMIT = 5
 
-    while (true) {
-      const cities = await this.geonamesCity.findAll({
-        attributes: ['asciiname'],
-        where: {
-          asciiname_ru: { [Op.or]: [null, ''] },
-        },
-        group: ['asciiname'],
-        order: [['asciiname', 'ASC']],
-        limit: BATCH_SIZE,
-        offset,
-      } as any)
+    this.logger.log('📥 Получаю список уникальных городов...')
 
-      if (cities.length === 0) break
+    const allCities = await this.geonamesCity.findAll({
+      attributes: ['asciiname', 'asciiname_ru'],
+      where: {
+        asciiname_ru: { [Op.or]: [null, ''] },
+      } as any,
+      order: [['asciiname', 'ASC']],
+      raw: true,
+    })
 
-      this.logger.log(`🌀 Батч #${batchNumber} (${cities.length} уникальных названий)`)
+    this.logger.log(`🔢 Всего уникальных городов: ${allCities.length}`)
+    const chunks = this.chunkArray(allCities, BATCH_SIZE)
 
-      for (let i = 0; i < cities.length; i++) {
-        const { asciiname } = cities[i]
+    for (let batchNumber = 0; batchNumber < chunks.length; batchNumber++) {
+      const batch = chunks[batchNumber]
+      this.logger.log(`🌀 Батч #${batchNumber + 1} (${batch.length} городов)`)
 
+      let completed = 0
+
+      await this.processInChunks(batch, CONCURRENT_LIMIT, async ({ asciiname }) => {
         try {
           const transcription = await this.fetchLlmTranscription(asciiname)
 
           if (transcription) {
-            await this.geonamesCity.update({ asciiname_ru: transcription }, {
-              where: {
-                asciiname,
-                asciiname_ru: { [Op.or]: [null, ''] },
+            const safeAscii = asciiname.replace(/'/g, "''")
+
+            const [affectedRows] = await this.geonamesCity.update(
+              { asciiname_ru: transcription },
+              {
+                where: Sequelize.where(
+                  Sequelize.cast(Sequelize.col('asciiname'), 'bytea'),
+                  '=',
+                  Sequelize.literal(`'${safeAscii}'::bytea`),
+                ),
               },
-            } as any)
-            this.logger.log(`✅ ${i + 1}/${cities.length} | "${asciiname}" → ${transcription}`)
+            )
+
+            if (affectedRows === 0) {
+              this.logger.warn(`⚠️ Запись не была обновлена: "${asciiname}"`)
+            } else {
+              completed++
+              this.logger.log(`✅ ${completed}/${batch.length} | "${asciiname}" → ${transcription}`)
+            }
           }
         } catch (error) {
           this.logger.error(`❌ Ошибка: "${asciiname}" — ${error.message}`)
         }
+      })
 
-        await this.sleep(10)
-      }
-
-      offset += BATCH_SIZE
-      batchNumber++
+      await this.sleep(100)
     }
 
     this.logger.log('🎉 Транскрипция завершена.')
+  }
+
+  // Разбивает массив на чанки
+  private chunkArray<T>(array: T[], chunkSize: number): T[][] {
+    const result: T[][] = []
+    for (let i = 0; i < array.length; i += chunkSize) {
+      result.push(array.slice(i, i + chunkSize))
+    }
+    return result
+  }
+
+  // Ограничивает количество одновременных задач
+  private async processInChunks<T>(items: T[], limit: number, asyncFn: (item: T) => Promise<void>) {
+    const executing: Promise<void>[] = []
+
+    for (const item of items) {
+      const p = asyncFn(item)
+      executing.push(p)
+
+      if (executing.length >= limit) {
+        await Promise.allSettled(executing)
+        executing.length = 0 // очищаем массив
+      }
+    }
+
+    // Завершаем оставшиеся
+    if (executing.length > 0) {
+      await Promise.allSettled(executing)
+    }
   }
 
   async translateCityInBatches() {

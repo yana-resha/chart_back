@@ -78,12 +78,12 @@ export class SwephHelper {
   }
 
   static async calculatePlanets(
+    jd: number,
     utcDate: Date,
     latitude: number,
     longitude: number,
   ): Promise<PlanetPosition[]> {
     this.checkInitialized()
-    const jd = this.toJulianDay(utcDate)
     const results: PlanetPosition[] = []
     let sunLongitude = 0
     let moonLongitude = 0
@@ -125,7 +125,7 @@ export class SwephHelper {
       }
     }
 
-    const fortuna = await this.calculateFortuna(utcDate, sunLongitude, moonLongitude, latitude, longitude)
+    const fortuna = await this.calculateFortuna(jd, sunLongitude, moonLongitude, latitude, longitude)
     results.push(fortuna)
 
     const selenaLongitude = this.calculateSelenaByShestopalov(utcDate)
@@ -137,6 +137,17 @@ export class SwephHelper {
       speed: 0,
       isRetrograde: false,
     })
+
+    /* Временно добавляю, потом нужно сделать чтобы все планеты сортировались по важности */
+    /* Хотя они и так как бы сейчас в правильном порядке идут, может и не временно так что */
+    const rahuIndex = results.findIndex((p) => p.name === 'Rahu')
+    const ketuIndex = results.findIndex((p) => p.name === 'Ketu')
+
+    if (rahuIndex > -1 && ketuIndex > -1 && ketuIndex > rahuIndex) {
+      const [ketu] = results.splice(ketuIndex, 1)
+      results.splice(rahuIndex, 0, ketu)
+    }
+    /*  */
 
     return results
   }
@@ -154,13 +165,13 @@ export class SwephHelper {
   }
 
   private static async calculateFortuna(
-    utcDate: Date,
+    jd: number,
     sunLongitude: number,
     moonLongitude: number,
     latitude: number,
     longitude: number,
   ): Promise<PlanetPosition> {
-    const houses = await this.calculateHouses(utcDate, latitude, longitude)
+    const houses = await this.calculateHouses(jd, latitude, longitude)
     const ascendant = houses.ascendant
 
     const sunHouse = this.getHouseIndex(sunLongitude, houses.houses)
@@ -221,9 +232,8 @@ export class SwephHelper {
     })
   }
 
-  static calculateHouses(utcDate: Date, latitude: number, longitude: number): Promise<Houses> {
+  static calculateHouses(jd: number, latitude: number, longitude: number): Promise<Houses> {
     this.checkInitialized()
-    const jd = this.toJulianDay(utcDate)
     return new Promise((resolve, reject) => {
       swe_houses(jd, latitude, longitude, 'P', (result) => {
         if ('error' in result || !('house' in result)) {
@@ -263,12 +273,14 @@ export class SwephHelper {
     timezone: number,
     latitude: number,
     longitude: number,
+    place?: string,
   ): Promise<AstroCalculationResult> {
     this.checkInitialized()
     const utcDate = this.toUniversalTime(date, timezone)
+    const jd = this.toJulianDay(utcDate)
     const [planets, houses] = await Promise.all([
-      this.calculatePlanets(utcDate, latitude, longitude),
-      this.calculateHouses(utcDate, latitude, longitude),
+      this.calculatePlanets(jd, utcDate, latitude, longitude),
+      this.calculateHouses(jd, latitude, longitude),
     ])
 
     const housesActivity = this.calculateHousesActivity(planets, houses.houses)
@@ -279,6 +291,8 @@ export class SwephHelper {
         timezone,
         latitude,
         longitude,
+        place,
+        jd,
       },
       result: {
         planets,

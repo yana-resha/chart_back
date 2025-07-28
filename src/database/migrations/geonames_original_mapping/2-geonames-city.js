@@ -84,7 +84,6 @@ module.exports = {
     `);
 
     // удаляю лишние колонки из таблицы geonames_city
-
     await queryInterface.removeColumn('geonames_city', 'fclass');
     await queryInterface.removeColumn('geonames_admin_1', 'fcode');
     

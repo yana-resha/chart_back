@@ -17,9 +17,7 @@ export interface CalculateFullNatalChartResult {
 
 @Injectable()
 export class AstroService {
-  constructor() {
-    void this.calculateFullNatalChart('1995-01-11T18:55:00Z', 5, 52.7667, 55.7833)
-  }
+  constructor() {}
   /**
    * Полный расчет натальной карты:
    * - планеты
@@ -32,21 +30,24 @@ export class AstroService {
     timezone: number,
     latitude: number,
     longitude: number,
+    place?: string,
   ): Promise<CalculateFullNatalChartResult> {
     // 1. Сначала расчёт положения планет и домов
-    const baseChart = await SwephHelper.calculateNatalChart(date, timezone, latitude, longitude)
+    const baseChart = await SwephHelper.calculateNatalChart(date, timezone, latitude, longitude, place)
     // 2. Расчет аспектов
     const aspects = AspectCalculator.calculateAspects(baseChart.result.planets)
     // 3. Расчет самой сильной планеты по аспектам (планета, которая суммарно учавствует в самых сильных аспектах)
     const strongestPlanet = AspectCalculator.getStrongestPlanet(aspects)
     // 4. Расчет конфигураций на основе аспектов
-    const configurations = AspectConfigurationDetector.detectConfigurations(aspects)
+    const configurations = AspectConfigurationDetector.detectConfigurations(aspects, baseChart.result.planets)
 
     // 5. Расчет силы карты по аспектам
     const chartAspectStatistics = AspectCalculator.calculateChartAspectStatistics(aspects)
     // 6. Возвращаем результат
     return {
-      sourceData: baseChart.sourceData,
+      sourceData: {
+        ...baseChart.sourceData,
+      },
       result: {
         ...baseChart.result,
         aspects,

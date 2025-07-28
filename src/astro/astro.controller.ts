@@ -18,9 +18,15 @@ export class AstroController {
     type: BaseResponseDtoFactory(FullNatalChartResultDto),
   })
   async getFullNatalChart(@Body() body: FullNatalChartQueryDto): Promise<FullNatalChartResultDto> {
-    const { date, time, timezone, latitude, longitude } = body
+    const { date, time, timezone, latitude, longitude, place = undefined } = body
     const datetime = `${date}T${time}Z`
-    const chart = await this.astroService.calculateFullNatalChart(datetime, timezone, latitude, longitude)
+    const chart = await this.astroService.calculateFullNatalChart(
+      datetime,
+      timezone,
+      latitude,
+      longitude,
+      place,
+    )
     return chart
   }
 }

@@ -44,14 +44,23 @@ class ResultDto {
 
 // Входные данные
 class SourceDataDto {
-  @ApiProperty({ example: '2025-06-21T12:00:00' })
+  @ApiProperty({ example: '2025-06-21T12:00:00Z' })
   @IsString()
   datetime: string
+
+  @ApiProperty({ example: 'Кумертау' })
+  @IsString()
+  place?: string
 
   @ApiProperty({ example: 3 })
   @Type(() => Number)
   @IsNumber()
   timezone: number
+
+  @ApiProperty({ example: 2449729.07986111 })
+  @Type(() => Number)
+  @IsNumber()
+  jd: number
 
   @ApiProperty({ example: 55.7558 })
   @Type(() => Number)

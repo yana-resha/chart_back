@@ -10,10 +10,11 @@ import {
   AspectCategory,
 } from '../types/aspect.types'
 import { PlanetPosition } from '../types/sweph.types'
+import { Planet } from '../types/sweph.types'
 
 export class AspectCalculator {
-  static readonly MOON_ORB_MULTIPLIER = 1.2 // Орбис с Луной увеличивается на 20%
-  static readonly MOON_STRENGTH_MULTIPLIER = 1.2 // Сила аспектов к Луне увеличивается на 10%
+  static readonly MOON_ORB_MULTIPLIER = 1 // Орбис с Луной увеличивается на 20%
+  static readonly MOON_STRENGTH_MULTIPLIER = 1 // Сила аспектов к Луне увеличивается на 10%
   static readonly DEFAULT_MAX_ORB: Record<AspectType, number> = {
     [AspectType.Conjunction]: 8,
     [AspectType.Opposition]: 8,
@@ -32,7 +33,7 @@ export class AspectCalculator {
     [AspectType.Quincunx]: 0.7,
   }
 
-  static readonly DEFAULT_IMPORTANCE: Record<string, number> = {
+  static readonly DEFAULT_IMPORTANCE: Record<Planet, number> = {
     Sun: 1.5,
     Moon: 1.4,
     Mercury: 1.2,
@@ -43,7 +44,11 @@ export class AspectCalculator {
     Uranus: 1.0,
     Neptune: 1.0,
     Pluto: 1.0,
-    NorthNode: 0.8,
+    Ketu: 0.8,
+    Rahu: 0.8,
+    Proserpina: 0.7,
+    Fortuna: 0.7,
+    Selena: 0.7,
     Chiron: 0.7,
     Lilith: 0.7,
   }
@@ -91,7 +96,7 @@ export class AspectCalculator {
         const angle = this.getAngleBetween(planetA.longitude, planetB.longitude)
 
         for (const [aspectType, exactAngle] of Object.entries(this.ASPECTS)) {
-          const orb = Math.abs(angle - exactAngle)
+          const rawOrb = Math.abs(angle - exactAngle)
 
           let maxOrb =
             customOrbs?.[aspectType as AspectType] ?? this.DEFAULT_MAX_ORB[aspectType as AspectType]
@@ -100,6 +105,8 @@ export class AspectCalculator {
           if (planetA.name === 'Moon' || planetB.name === 'Moon') {
             maxOrb *= this.MOON_ORB_MULTIPLIER
           }
+
+          const orb = parseFloat(rawOrb.toFixed(2)) // 🔒 округляем до двух знаков строго
 
           if (orb <= maxOrb) {
             let baseStrength = this.calculateStrength(orb, maxOrb)
@@ -125,7 +132,7 @@ export class AspectCalculator {
               planetB: planetB.name,
               aspectType: aspectType as AspectType,
               angle: this.ASPECTS[aspectType],
-              orb: parseFloat(orb.toFixed(2)),
+              orb,
               strength,
               isExact: orb <= 1,
               isVeryExact: orb <= 0.5 || strength >= 95,
