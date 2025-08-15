@@ -99,6 +99,7 @@ export interface AstroCalculationSourceData {
   longitude: number
   jd: number
   place?: string
+  name?: string
 }
 
 export interface AstroCalculationValue {

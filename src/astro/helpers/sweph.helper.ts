@@ -273,7 +273,6 @@ export class SwephHelper {
     timezone: number,
     latitude: number,
     longitude: number,
-    place?: string,
   ): Promise<AstroCalculationResult> {
     this.checkInitialized()
     const utcDate = this.toUniversalTime(date, timezone)
@@ -291,7 +290,6 @@ export class SwephHelper {
         timezone,
         latitude,
         longitude,
-        place,
         jd,
       },
       result: {

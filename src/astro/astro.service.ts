@@ -31,9 +31,10 @@ export class AstroService {
     latitude: number,
     longitude: number,
     place?: string,
+    name?: string,
   ): Promise<CalculateFullNatalChartResult> {
     // 1. Сначала расчёт положения планет и домов
-    const baseChart = await SwephHelper.calculateNatalChart(date, timezone, latitude, longitude, place)
+    const baseChart = await SwephHelper.calculateNatalChart(date, timezone, latitude, longitude)
     // 2. Расчет аспектов
     const aspects = AspectCalculator.calculateAspects(baseChart.result.planets)
     // 3. Расчет самой сильной планеты по аспектам (планета, которая суммарно учавствует в самых сильных аспектах)
@@ -44,9 +45,12 @@ export class AstroService {
     // 5. Расчет силы карты по аспектам
     const chartAspectStatistics = AspectCalculator.calculateChartAspectStatistics(aspects)
     // 6. Возвращаем результат
+    console.log(name)
     return {
       sourceData: {
         ...baseChart.sourceData,
+        place,
+        name,
       },
       result: {
         ...baseChart.result,
