@@ -1,4 +1,4 @@
-import { AstroChartType } from 'src/common/enums/astro-chart-type.enum'
+import { AstroChartType } from 'src/common/enums/astro/chart-type.enum'
 
 export const ChartTypeDescriptions: Record<AstroChartType, string> = {
   [AstroChartType.NATAL]: `

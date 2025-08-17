@@ -1,4 +1,4 @@
-import { Matches, IsNumber, Min, Max } from 'class-validator'
+import { Matches, IsNumber, Min, Max, IsOptional } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
 
 export class FullNatalChartQueryDto {
@@ -12,17 +12,18 @@ export class FullNatalChartQueryDto {
   })
   time: string
 
-  @ApiProperty({ example: 'Кумертау' })
+  @ApiProperty({ example: 'Кумертау', required: false })
   place?: string
 
-  @ApiProperty({ example: 'Яна' })
+  @ApiProperty({ example: 'Яна', required: false })
   name?: string
 
-  @ApiProperty({ example: 5 })
+  @ApiProperty({ example: 5, required: false, description: 'Смещение от UTC в часах' })
+  @IsOptional()
   @IsNumber()
   @Min(-12)
   @Max(14)
-  timezone: number
+  timezone?: number
 
   @ApiProperty({ example: 52.7667 })
   @IsNumber()

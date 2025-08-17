@@ -45,7 +45,6 @@ export class AstroService {
     // 5. Расчет силы карты по аспектам
     const chartAspectStatistics = AspectCalculator.calculateChartAspectStatistics(aspects)
     // 6. Возвращаем результат
-    console.log(name)
     return {
       sourceData: {
         ...baseChart.sourceData,

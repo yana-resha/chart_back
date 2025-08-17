@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { readFileSync } from 'fs'
 import { join } from 'path'
-import { AstroChartType } from 'src/common/enums/astro-chart-type.enum'
+import { AstroChartType } from 'src/common/enums/astro/chart-type.enum'
 import { AspectType } from '../types/aspect.types'
 import { ZodiacSign } from '../types/common.types'
 import { AstroConfigurationType } from '../types/configuration.types'

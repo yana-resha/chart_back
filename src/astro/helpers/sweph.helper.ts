@@ -48,10 +48,14 @@ export class SwephHelper {
     return parseFloat(normalized.toFixed(6))
   }
 
-  static toUniversalTime(date: string, timezone: number): Date {
-    const localDate = new Date(date)
-    localDate.setHours(localDate.getHours() - timezone)
-    return localDate
+  static toUniversalTime(date: string | Date, timezoneHours: number): Date {
+    // timezoneHours: локальный часовой сдвиг относительно UTC,
+    // например: +3, -4, 5.5, -9.75 и т.п.
+    const local = new Date(date)
+    const totalMinutes = Math.round(timezoneHours * 60) // 10.5 -> 630 минут
+    // локальное время = UTC + offset => UTC = локальное - offset
+    const utcMs = local.getTime() - totalMinutes * 60_000
+    return new Date(utcMs)
   }
 
   private static getCalendarFlag(year: number, month: number, day: number): 0 | 1 {

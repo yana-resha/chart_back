@@ -1,4 +1,4 @@
-import { AstroChartType } from 'src/common/enums/astro-chart-type.enum'
+import { AstroChartType } from 'src/common/enums/astro/chart-type.enum'
 import { AspectType } from '../types/aspect.types'
 import { AstroConfigurationType } from '../types/configuration.types'
 import { Planet_Variables, ZodiacSign } from '../types/common.types'

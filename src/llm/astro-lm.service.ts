@@ -3,7 +3,7 @@ import { LlmService } from './llm.service'
 import { AstroInterpretationDto } from './dto/astro-interpret.dto'
 import * as crypto from 'crypto'
 import { LlmModel } from './types/llm-model.enum'
-import { AstroChartType } from 'src/common/enums/astro-chart-type.enum'
+import { AstroChartType } from 'src/common/enums/astro/chart-type.enum'
 import { ChartTypeDescriptions } from './constants/chart-type-descriptions'
 import { LLM_CHAT_ROLE } from 'src/common/enums/llm.enum'
 
