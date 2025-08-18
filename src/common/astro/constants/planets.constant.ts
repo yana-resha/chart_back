@@ -1,14 +1,4 @@
-import { AspectType } from '../types/aspect.types'
-import { Planet_Variables } from '../types/common.types'
-
-export const ASPECT_DESCRIPTION: Record<AspectType, string> = {
-  [AspectType.Conjunction]: 'Соединение',
-  [AspectType.Opposition]: 'Оппозиция',
-  [AspectType.Trine]: 'Тригон',
-  [AspectType.Square]: 'Квадрат',
-  [AspectType.Sextile]: 'Cекстиль',
-  [AspectType.Quincunx]: 'Квинконс',
-}
+import { Planet_Variables } from '../enums/planets.enum'
 
 export const PLANET_DESCRIPTION: Record<Planet_Variables, string> = {
   [Planet_Variables.Sun]: 'Солнце',

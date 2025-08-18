@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { AspectType } from './aspect.types'
+import { AspectType } from 'src/common/astro/enums/aspects.enum'
 
 export enum AstroConfigurationType {
   GrandTrine = 'GrandTrine', // Три планеты соединены тринами

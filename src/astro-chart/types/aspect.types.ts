@@ -1,13 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-
-export enum AspectType {
-  Conjunction = 'Conjunction',
-  Opposition = 'Opposition',
-  Trine = 'Trine',
-  Square = 'Square',
-  Sextile = 'Sextile',
-  Quincunx = 'Quincunx',
-}
+import { AspectType, AspectCategory } from 'src/common/astro/enums/aspects.enum'
 
 export class Aspect {
   @ApiProperty({ example: 'Sun' })
@@ -36,12 +28,6 @@ export class Aspect {
 
   @ApiProperty({ example: 0.92, description: 'Сила аспекта от 0 до 1' })
   strength: number
-}
-
-export enum AspectCategory {
-  HARMONIOUS = 'harmonious',
-  TENSE = 'tense',
-  NEUTRAL = 'neutral',
 }
 
 export class StrongestPlanet {

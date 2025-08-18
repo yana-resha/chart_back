@@ -1,5 +1,6 @@
-import { Matches, IsNumber, Min, Max, IsOptional } from 'class-validator'
+import { Matches, IsNumber, Min, Max, IsOptional, IsIn } from 'class-validator'
 import { ApiProperty } from '@nestjs/swagger'
+import { House_System } from 'src/common/astro/enums/houses.enum'
 
 export class FullNatalChartQueryDto {
   @ApiProperty({ example: '1995-01-11' })
@@ -36,4 +37,14 @@ export class FullNatalChartQueryDto {
   @Min(-180)
   @Max(180)
   longitude: number
+
+  @ApiProperty({
+    example: House_System.Placidus,
+    required: false,
+    description: 'Система домов. По умолчанию Плацидус',
+    enum: House_System,
+  })
+  @IsOptional()
+  @IsIn(Object.values(House_System))
+  hsys?: House_System
 }

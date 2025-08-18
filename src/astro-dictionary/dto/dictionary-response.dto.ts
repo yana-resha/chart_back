@@ -1,5 +1,5 @@
 import { ApiExtraModels, ApiProperty, getSchemaPath, IntersectionType } from '@nestjs/swagger'
-import { AstroChartType } from 'src/common/enums/astro/chart-type.enum'
+import { AstroChartType } from 'src/common/astro/enums/chart-type.enum'
 import {
   CategoryAspectItem,
   CategoryConfigurationItem,

@@ -4,8 +4,6 @@ import { Injectable } from '@nestjs/common'
 import { LlmService } from 'src/llm/llm.service'
 import { LlmModel } from 'src/llm/types/llm-model.enum'
 import { ChatCompletionOptions } from 'src/llm/types/chat-completion-options'
-import { AspectType } from 'src/astro/types/aspect.types'
-import { Planet_Variables } from 'src/astro/types/common.types'
 import {
   ASPECT_SYSTEM_PROMPT,
   EXAMPLE_ASPECT_INTERPRETATION_CONJUNCTION,
@@ -16,8 +14,10 @@ import {
   EXAMPLE_ASPECT_INTERPRETATION_TRINE,
   USER_EXAMPLE_PROMPT,
 } from './constants/lm-prompts'
-import { PLANET_DESCRIPTION } from '../constants'
 import { LLM_CHAT_ROLE } from 'src/common/enums/llm.enum'
+import { AspectType } from 'src/common/astro/enums/aspects.enum'
+import { PLANET_DESCRIPTION } from 'src/common/astro/constants/planets.constant'
+import { Planet_Variables } from 'src/common/astro/enums/planets.enum'
 
 const ASTRO_BALANCED_PRESET: ChatCompletionOptions = {
   temperature: 0.4,
@@ -84,7 +84,7 @@ export class LlmInterpretationService {
       content: ASPECT_SYSTEM_PROMPT,
     }
 
-    const exampleMessages = Object.entries(EXAMPLE_BY_ASPECT_TYPE).flatMap(([type, example]) => [
+    const exampleMessages = Object.entries(EXAMPLE_BY_ASPECT_TYPE).flatMap(([, example]) => [
       {
         role: LLM_CHAT_ROLE.USER,
         content: USER_EXAMPLE_PROMPT.replace('{{EXAMPLE}}', example.trim()),

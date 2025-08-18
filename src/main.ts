@@ -4,7 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { ValidationPipe } from './common/pipes/validation.pipe'
 import { ResponseInterceptor } from './common/interceptors/response.interceptors'
 import { GlobalExceptionFilter } from './common/filters/global-exception.filter'
-import { SwephHelper } from './astro/helpers/sweph.helper'
+import { SwephHelper } from './astro-chart/helpers/sweph.helper'
 
 async function bootstrap() {
   // Путь до файлов с эфемеридами

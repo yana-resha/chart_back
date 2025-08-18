@@ -1,7 +1,7 @@
 import { Controller, Post, Body } from '@nestjs/common'
 import { AstroLmService } from './astro-lm.service'
 import { AstroInterpretationDto } from './dto/astro-interpret.dto'
-import { AstroChartType } from 'src/common/enums/astro/chart-type.enum'
+import { AstroChartType } from 'src/common/astro/enums/chart-type.enum'
 
 @Controller('llm/astro')
 export class AstroLmController {

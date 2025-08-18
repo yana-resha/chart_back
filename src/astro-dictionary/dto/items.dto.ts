@@ -1,9 +1,10 @@
 import { Type } from '@nestjs/common'
 import { ApiProperty } from '@nestjs/swagger'
-import { AspectType } from 'src/astro/types/aspect.types'
-import { Planet_Variables, ZodiacSign } from 'src/astro/types/common.types'
-import { AstroConfigurationType } from 'src/astro/types/configuration.types'
+import { AstroConfigurationType } from 'src/astro-chart/types/configuration.types'
 import { AstroDictionaryCategory } from '../dictionary.types'
+import { AspectType } from 'src/common/astro/enums/aspects.enum'
+import { Planet_Variables } from 'src/common/astro/enums/planets.enum'
+import { ZodiacSign } from 'src/common/astro/enums/zodiacs.enum'
 
 export class PurePlanetInSignItem {
   @ApiProperty({ enum: Planet_Variables })

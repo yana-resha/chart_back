@@ -19,7 +19,7 @@ export class AstroController {
     type: BaseResponseDtoFactory(FullNatalChartResultDto),
   })
   async getFullNatalChart(@Body() body: FullNatalChartQueryDto): Promise<FullNatalChartResultDto> {
-    const { date, time, timezone, latitude, longitude, place = undefined, name = undefined } = body
+    const { date, time, timezone, latitude, longitude, hsys, place = undefined, name = undefined } = body
     // если не передали временную зону то определяем сами
     const tzHours =
       typeof timezone === 'number' && Number.isFinite(timezone)
@@ -32,6 +32,7 @@ export class AstroController {
       tzHours,
       latitude,
       longitude,
+      hsys,
       place,
       name,
     )

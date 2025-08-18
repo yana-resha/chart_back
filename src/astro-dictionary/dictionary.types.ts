@@ -1,7 +1,8 @@
-import { AstroChartType } from 'src/common/enums/astro/chart-type.enum'
-import { AspectType } from '../types/aspect.types'
-import { AstroConfigurationType } from '../types/configuration.types'
-import { Planet_Variables, ZodiacSign } from '../types/common.types'
+import { AstroChartType } from 'src/common/astro/enums/chart-type.enum'
+import { AstroConfigurationType } from '../astro-chart/types/configuration.types'
+import { AspectType } from 'src/common/astro/enums/aspects.enum'
+import { Planet_Variables } from 'src/common/astro/enums/planets.enum'
+import { ZodiacSign } from 'src/common/astro/enums/zodiacs.enum'
 
 export enum AstroDictionaryCategory {
   PLANET_IN_SIGN = 'planet-in-sign',

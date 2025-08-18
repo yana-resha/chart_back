@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common'
 import { readFileSync } from 'fs'
 import { join } from 'path'
-import { AstroChartType } from 'src/common/enums/astro/chart-type.enum'
-import { AspectType } from '../types/aspect.types'
-import { ZodiacSign } from '../types/common.types'
-import { AstroConfigurationType } from '../types/configuration.types'
+import { AstroChartType } from 'src/common/astro/enums/chart-type.enum'
+import { AstroConfigurationType } from '../astro-chart/types/configuration.types'
 import { PlanetName, DictionaryKey, AstroDictionaryCategory } from './dictionary.types'
+import { AspectType } from 'src/common/astro/enums/aspects.enum'
+import { ZodiacSign } from 'src/common/astro/enums/zodiacs.enum'
 
 @Injectable()
 export class AstroDictionaryService {
@@ -14,7 +14,7 @@ export class AstroDictionaryService {
   constructor() {
     this.basePath =
       process.env.NODE_ENV === 'development'
-        ? join(process.cwd(), 'src', 'astro', 'astro-dictionary', 'data')
+        ? join(process.cwd(), 'src', 'astro-dictionary', 'data')
         : join(__dirname, 'data')
   }
   /**

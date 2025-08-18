@@ -1,16 +1,15 @@
-import { ASPECT_CATEGORY_MAP } from '../constants/aspect.constants'
+import { AspectType, AspectCategory } from 'src/common/astro/enums/aspects.enum'
 import {
-  AspectType,
   AspectOrbSettings,
   AspectWeightSettings,
   PlanetImportanceSettings,
   Aspect,
   StrongestPlanet,
   EvaluateChartStrengthVariables,
-  AspectCategory,
 } from '../types/aspect.types'
 import { PlanetPosition } from '../types/sweph.types'
 import { Planet } from '../types/sweph.types'
+import { ASPECT_CATEGORY_MAP } from 'src/common/astro/constants/aspects.constant'
 
 export class AspectCalculator {
   static readonly MOON_ORB_MULTIPLIER = 1 // Орбис с Луной увеличивается на 20%

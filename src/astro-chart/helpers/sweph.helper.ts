@@ -18,7 +18,10 @@ import {
   AstroCalculationResult,
   IHousesActivity,
   HouseActivityVariables,
+  SwephHouseSystem,
+  SwephCode,
 } from '../types/sweph.types'
+import { House_System } from 'src/common/astro/enums/houses.enum'
 
 export class SwephHelper {
   static initialized = false
@@ -49,11 +52,10 @@ export class SwephHelper {
   }
 
   static toUniversalTime(date: string | Date, timezoneHours: number): Date {
-    // timezoneHours: локальный часовой сдвиг относительно UTC,
-    // например: +3, -4, 5.5, -9.75 и т.п.
+    // timezoneHours: локальный часовой сдвиг относительно UTC (например, +3, -4, 5.5, -9.75)
     const local = new Date(date)
-    const totalMinutes = Math.round(timezoneHours * 60) // 10.5 -> 630 минут
-    // локальное время = UTC + offset => UTC = локальное - offset
+    const totalMinutes = Math.round(timezoneHours * 60)
+    // локальное = UTC + offset  →  UTC = локальное - offset
     const utcMs = local.getTime() - totalMinutes * 60_000
     return new Date(utcMs)
   }
@@ -75,7 +77,6 @@ export class SwephHelper {
     const millisecond = utcDate.getUTCMilliseconds()
 
     const fractionalDay = hour + minute / 60 + second / 3600 + millisecond / 3600000
-
     const calendarFlag = this.getCalendarFlag(year, month, day)
 
     return swe_julday(year, month, day, fractionalDay, calendarFlag)
@@ -86,6 +87,7 @@ export class SwephHelper {
     utcDate: Date,
     latitude: number,
     longitude: number,
+    hsysCode: SwephCode, // ⬅️ добавили код системы домов
   ): Promise<PlanetPosition[]> {
     this.checkInitialized()
     const results: PlanetPosition[] = []
@@ -129,9 +131,18 @@ export class SwephHelper {
       }
     }
 
-    const fortuna = await this.calculateFortuna(jd, sunLongitude, moonLongitude, latitude, longitude)
+    // Fortuna должна использовать тот же ASC, что и выбранная система домов:
+    const fortuna = await this.calculateFortuna(
+      jd,
+      sunLongitude,
+      moonLongitude,
+      latitude,
+      longitude,
+      hsysCode, // ⬅️ пробрасываем код
+    )
     results.push(fortuna)
 
+    // Selena по Шестопалову — без привязки к домам
     const selenaLongitude = this.calculateSelenaByShestopalov(utcDate)
     results.push({
       name: 'Selena',
@@ -142,16 +153,13 @@ export class SwephHelper {
       isRetrograde: false,
     })
 
-    /* Временно добавляю, потом нужно сделать чтобы все планеты сортировались по важности */
-    /* Хотя они и так как бы сейчас в правильном порядке идут, может и не временно так что */
+    /* Временно меняем порядок Раху/Кету */
     const rahuIndex = results.findIndex((p) => p.name === 'Rahu')
     const ketuIndex = results.findIndex((p) => p.name === 'Ketu')
-
     if (rahuIndex > -1 && ketuIndex > -1 && ketuIndex > rahuIndex) {
       const [ketu] = results.splice(ketuIndex, 1)
       results.splice(rahuIndex, 0, ketu)
     }
-    /*  */
 
     return results
   }
@@ -174,8 +182,9 @@ export class SwephHelper {
     moonLongitude: number,
     latitude: number,
     longitude: number,
+    hsysCode: SwephCode, // ⬅️ добавили код системы домов
   ): Promise<PlanetPosition> {
-    const houses = await this.calculateHouses(jd, latitude, longitude)
+    const houses = await this.calculateHouses(jd, latitude, longitude, hsysCode)
     const ascendant = houses.ascendant
 
     const sunHouse = this.getHouseIndex(sunLongitude, houses.houses)
@@ -236,10 +245,15 @@ export class SwephHelper {
     })
   }
 
-  static calculateHouses(jd: number, latitude: number, longitude: number): Promise<Houses> {
+  static calculateHouses(
+    jd: number,
+    latitude: number,
+    longitude: number,
+    hsys: SwephCode, // ⬅️ метод принимает уже готовый код
+  ): Promise<Houses> {
     this.checkInitialized()
     return new Promise((resolve, reject) => {
-      swe_houses(jd, latitude, longitude, 'P', (result) => {
+      swe_houses(jd, latitude, longitude, hsys, (result) => {
         if ('error' in result || !('house' in result)) {
           reject(
             new AppException(
@@ -277,13 +291,18 @@ export class SwephHelper {
     timezone: number,
     latitude: number,
     longitude: number,
+    hsys: House_System = House_System.Placidus, // ⬅️ фронт может не передать — используем Плацидус
   ): Promise<AstroCalculationResult> {
     this.checkInitialized()
     const utcDate = this.toUniversalTime(date, timezone)
     const jd = this.toJulianDay(utcDate)
+
+    const effectiveHsys: House_System = hsys ?? House_System.Placidus
+    const effectiveCode: SwephCode = SwephHouseSystem[effectiveHsys]
+
     const [planets, houses] = await Promise.all([
-      this.calculatePlanets(jd, utcDate, latitude, longitude),
-      this.calculateHouses(jd, latitude, longitude),
+      this.calculatePlanets(jd, utcDate, latitude, longitude, effectiveCode), // ⬅️ пробрасываем код
+      this.calculateHouses(jd, latitude, longitude, effectiveCode),
     ])
 
     const housesActivity = this.calculateHousesActivity(planets, houses.houses)
@@ -294,6 +313,7 @@ export class SwephHelper {
         timezone,
         latitude,
         longitude,
+        hsys: effectiveHsys, // что реально использовано (без кодов SE наружу)
         jd,
       },
       result: {

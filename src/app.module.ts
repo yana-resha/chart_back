@@ -4,8 +4,8 @@ import { SequelizeModule } from '@nestjs/sequelize'
 import { RouterModule } from '@nestjs/core'
 
 import { LocalityModule } from './locality/locality.module'
-import { AstroModule } from './astro/astro.module'
-import { AstroDictionaryModule } from './astro/astro-dictionary/astro-dictionary.module'
+import { AstroModule } from './astro-chart/astro.module'
+import { AstroDictionaryModule } from './astro-dictionary/astro-dictionary.module'
 import { TranslateModule } from './translate/translate.module'
 import { LlmModule } from './llm/llm.module'
 

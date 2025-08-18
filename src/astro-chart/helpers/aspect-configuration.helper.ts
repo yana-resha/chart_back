@@ -1,4 +1,5 @@
-import { Aspect, AspectType } from '../types/aspect.types'
+import { AspectType } from 'src/common/astro/enums/aspects.enum'
+import { Aspect } from '../types/aspect.types'
 import { AstroConfiguration, AstroConfigurationType } from '../types/configuration.types'
 
 function getAngleDiff(a: number, b: number): number {

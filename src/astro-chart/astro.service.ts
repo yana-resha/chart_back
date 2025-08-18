@@ -5,6 +5,7 @@ import { Aspect, ChartAspectStatistics, StrongestPlanet } from './types/aspect.t
 import { AstroCalculationSourceData, AstroCalculationValue } from './types/sweph.types'
 import { AspectConfigurationDetector } from './helpers/aspect-configuration.helper'
 import { AstroConfiguration } from './types/configuration.types'
+import { House_System } from 'src/common/astro/enums/houses.enum'
 
 export interface CalculateFullNatalChartResult {
   sourceData: AstroCalculationSourceData
@@ -30,11 +31,12 @@ export class AstroService {
     timezone: number,
     latitude: number,
     longitude: number,
+    hsys?: House_System,
     place?: string,
     name?: string,
   ): Promise<CalculateFullNatalChartResult> {
     // 1. Сначала расчёт положения планет и домов
-    const baseChart = await SwephHelper.calculateNatalChart(date, timezone, latitude, longitude)
+    const baseChart = await SwephHelper.calculateNatalChart(date, timezone, latitude, longitude, hsys)
     // 2. Расчет аспектов
     const aspects = AspectCalculator.calculateAspects(baseChart.result.planets)
     // 3. Расчет самой сильной планеты по аспектам (планета, которая суммарно учавствует в самых сильных аспектах)

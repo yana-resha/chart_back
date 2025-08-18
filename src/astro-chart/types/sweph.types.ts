@@ -15,7 +15,8 @@ import {
   SE_URANUS,
   SE_VENUS,
 } from 'swisseph'
-import { Planet_Variables } from './common.types'
+import { House_System } from 'src/common/astro/enums/houses.enum'
+import { Planet_Variables } from 'src/common/astro/enums/planets.enum'
 
 export const Planets: Record<Planet_Variables, number> = {
   [Planet_Variables.Sun]: SE_SUN,
@@ -67,6 +68,19 @@ export class PlanetPosition {
   isRetrograde: boolean
 }
 
+// --- Типы систем домов ---
+export const SwephHouseSystem = {
+  [House_System.Placidus]: 'P',
+  [House_System.Koch]: 'K',
+  [House_System.Porphyry]: 'O',
+  [House_System.Regiomontanus]: 'R',
+  [House_System.Campanus]: 'C',
+  [House_System.EqualMC]: 'V', // равнодомная от MC
+  [House_System.EqualAsc]: 'E', // равнодомная от Asc
+}
+
+export type SwephCode = (typeof SwephHouseSystem)[House_System]
+
 export class Houses {
   @ApiProperty({ example: 128.32491338495782, description: 'Асцендент' })
   ascendant: number
@@ -98,6 +112,7 @@ export interface AstroCalculationSourceData {
   latitude: number
   longitude: number
   jd: number
+  hsys: House_System
   place?: string
   name?: string
 }
