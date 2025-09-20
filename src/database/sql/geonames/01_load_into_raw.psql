@@ -1,0 +1,14 @@
+-- 01_load_into_raw.psql
+\set ON_ERROR_STOP on
+\echo Loading RAW…
+
+-- УКАЖИ СВОИ ПУТИ:
+\set path_countryinfo  '/ABSOLUTE/PATH/countryInfo_clean.txt'  -- без строк с '#'
+\set path_admin1       '/ABSOLUTE/PATH/admin1CodesASCII.txt'
+\set path_admin2       '/ABSOLUTE/PATH/admin2Codes.txt'
+\set path_allcountries '/ABSOLUTE/PATH/allCountries.txt'
+
+\COPY geonames_new.country_info_raw FROM :'path_countryinfo'  WITH (FORMAT text, DELIMITER E'\t', NULL '');
+\COPY geonames_new.admin1_raw       FROM :'path_admin1'       WITH (FORMAT text, DELIMITER E'\t', NULL '');
+\COPY geonames_new.admin2_raw       FROM :'path_admin2'       WITH (FORMAT text, DELIMITER E'\t', NULL '');
+\COPY geonames_new.all_countries_raw FROM :'path_allcountries' WITH (FORMAT text, DELIMITER E'\t', NULL '');

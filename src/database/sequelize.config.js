@@ -1,3 +1,6 @@
+require('ts-node/register');
+require('../dist/common/db/pg-types'); 
+
 module.exports = {
   "development": {
     "username": 'yana',

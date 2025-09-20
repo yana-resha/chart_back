@@ -13,6 +13,7 @@ import { GeonamesCity } from './locality/models/geonames-city.model'
 import { GeonamesAdmin1 } from './locality/models/geonames-admin-1.model'
 import { GeonamesAdmin2 } from './locality/models/geonames-admin-2.model'
 import { GeonamesCountry } from './locality/models/geonames-country.model'
+import './common/db/pg-types'
 
 @Module({
   imports: [
