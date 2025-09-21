@@ -7,10 +7,11 @@ import { GeonamesCountry } from './models/geonames-country.model'
 import { GeonamesAdmin1 } from './models/geonames-admin-1.model'
 import { GeonamesAdmin2 } from './models/geonames-admin-2.model'
 import { GeonamesCity } from './models/geonames-city.model'
+import { LocalMemoryCacheService } from 'src/common/cache/local-memory-cache.service'
 
 @Module({
   controllers: [LocalityController],
-  providers: [LocalityService],
+  providers: [LocalityService, LocalMemoryCacheService],
   imports: [
     SequelizeModule.forFeature([GeonamesCity, GeonamesCountry, GeonamesAdmin1, GeonamesAdmin2]),
     HttpModule,

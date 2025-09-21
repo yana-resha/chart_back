@@ -10,7 +10,7 @@ async function bootstrap() {
   // Путь до файлов с эфемеридами
   SwephHelper.init('/Users/yana/Desktop/study/natal_datas/ephemeris/ephe')
 
-  const app = await NestFactory.create(AppModule)
+  const app = await NestFactory.create(AppModule, { logger: ['error', 'warn', 'log', 'debug'] })
 
   // Префиксируем все ручки через /api
   app.setGlobalPrefix('api')

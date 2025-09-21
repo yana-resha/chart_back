@@ -1,20 +1,41 @@
-import { IsString, IsOptional, IsIn, MinLength } from 'class-validator'
-import { ApiProperty } from '@nestjs/swagger'
+// src/locality/dto/search-locality.dto.ts
+import { ApiPropertyOptional } from '@nestjs/swagger'
+import { IsIn, IsInt, IsOptional, IsString, Max, Min } from 'class-validator'
+import { Type } from 'class-transformer'
 import { GEONAMES_LANGUAGES } from '../types'
 
 export class SearchLocalityDto {
-  @ApiProperty({ description: 'Название населенного пункта (минимум 3 символа)' })
+  @ApiPropertyOptional({ description: 'Строка поиска (город/посёлок и т.п.)', example: 'mosc', default: '' })
   @IsString()
-  @MinLength(3, { message: 'Название должно содержать минимум 3 символа' })
-  name: string
+  @IsOptional()
+  name?: string = ''
 
-  @ApiProperty({
-    description: `Язык поиска: ${GEONAMES_LANGUAGES.RU} (по умолчанию) или ${GEONAMES_LANGUAGES.EN}`,
+  @ApiPropertyOptional({
+    description: 'Язык поиска',
     enum: GEONAMES_LANGUAGES,
-    required: false,
     default: GEONAMES_LANGUAGES.RU,
   })
+  @IsIn(Object.values(GEONAMES_LANGUAGES))
   @IsOptional()
-  @IsIn([GEONAMES_LANGUAGES.EN, GEONAMES_LANGUAGES.RU])
-  lang?: GEONAMES_LANGUAGES.RU | GEONAMES_LANGUAGES.EN = GEONAMES_LANGUAGES.RU
+  lang?: GEONAMES_LANGUAGES = GEONAMES_LANGUAGES.RU
+
+  @ApiPropertyOptional({ description: 'ISO страны для ограничения поиска', example: 'RU' })
+  @IsString()
+  @IsOptional()
+  countryIso?: string
+
+  @ApiPropertyOptional({ description: 'Лимит результатов (1..200)', default: 50, minimum: 1, maximum: 200 })
+  @Type(() => Number)
+  @IsInt()
+  @Min(1)
+  @Max(200)
+  @IsOptional()
+  limit?: number = 50
+
+  @ApiPropertyOptional({ description: 'Смещение результатов', default: 0, minimum: 0 })
+  @Type(() => Number)
+  @IsInt()
+  @Min(0)
+  @IsOptional()
+  offset?: number = 0
 }
