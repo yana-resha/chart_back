@@ -8,7 +8,8 @@ import { SwephHelper } from './astro-chart/helpers/sweph.helper'
 
 async function bootstrap() {
   // Путь до файлов с эфемеридами
-  SwephHelper.init('/Users/yana/Desktop/study/natal_datas/ephemeris/ephe')
+  const ephePath = process.env.EPHEMERIS_PATH || './data/ephemeris/ephe'
+  SwephHelper.init(ephePath)
 
   const app = await NestFactory.create(AppModule, { logger: ['error', 'warn', 'log', 'debug'] })
 
